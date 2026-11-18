@@ -125,36 +125,6 @@ for r in tes_rows:
     if t.get('santri_id'):
         tes_by_id[t['santri_id']].append(t)
 
-# Query Laporansabtu for these santri only
-sabtu_rows = c.execute(
-    "SELECT * FROM laporansabtu WHERE nik IN (" + ",".join("?" for _ in santri_nik_set) + ") OR santri_id IN (" + ",".join("?" for _ in santri_id_set) + ") ORDER BY created_at DESC",
-    list(santri_nik_set) + list(santri_id_set)
-).fetchall()
-
-sabtu_by_nik = defaultdict(list)
-sabtu_by_id = defaultdict(list)
-for r in sabtu_rows:
-    ls = dict(r)
-    dt_str = str(ls.get('created_at', ''))[:10]
-    if dt_str:
-        all_record_dates.append(dt_str)
-    try:
-        ls['murajaah'] = json.loads(ls['murajaahentries']) if ls['murajaahentries'] else []
-    except:
-        ls['murajaah'] = []
-    try:
-        ls['hafalan_tidak_lancar'] = json.loads(ls['hafalanentries']) if ls['hafalanentries'] else []
-    except:
-        ls['hafalan_tidak_lancar'] = []
-        
-    if ls.get('nik'):
-        sabtu_by_nik[str(ls['nik'])].append(ls)
-    if ls.get('santri_id'):
-        try:
-            sabtu_by_id[int(ls['santri_id'])].append(ls)
-        except:
-            pass
-
 min_date = min(all_record_dates) if all_record_dates else '2026-01-01'
 max_date = max(all_record_dates) if all_record_dates else '2026-11-18'
 
@@ -189,7 +159,7 @@ def syahadah_to_num(sy_text):
     return m.get(sy_text.lower(), 1) if sy_text else 0
 
 all_santri = []
-juz_stats = {j: {'juz': j, 'name': juz_surah_names[j], 'hafal_count': 0, 'tes_lancar': 0, 'tes_tidak_lancar': 0, 'sabtu_issues': 0} for j in range(1, 31)}
+juz_stats = {j: {'juz': j, 'name': juz_surah_names[j], 'hafal_count': 0, 'tes_lancar': 0, 'tes_tidak_lancar': 0} for j in range(1, 31)}
 
 for s in santri_rows:
     s_dict = dict(s)
@@ -222,10 +192,6 @@ for s in santri_rows:
     tests = tes_by_nik.get(nik, [])
     if not tests and sid in tes_by_id:
         tests = tes_by_id[sid]
-        
-    sabtu_reps = sabtu_by_nik.get(nik, [])
-    if not sabtu_reps and sid in sabtu_by_id:
-        sabtu_reps = sabtu_by_id[sid]
         
     achieved_juz_raw = set()
     for a in achievements:
@@ -303,25 +269,6 @@ for s in santri_rows:
                 'created_at_indo': format_indo_date(a.get('created_at'))
             })
     juziyahs.sort(key=lambda x: sequence.index(x['juz']) if x['juz'] in sequence else 99)
-    
-    sabtu_issues = []
-    for sr in sabtu_reps:
-        for he in sr['hafalan_tidak_lancar']:
-            jz = he.get('juz')
-            if jz:
-                try:
-                    jz_int = int(jz)
-                    if 1 <= jz_int <= 30:
-                        juz_stats[jz_int]['sabtu_issues'] += 1
-                except:
-                    pass
-            sabtu_issues.append({
-                'juz': jz,
-                'startPage': he.get('startPage', '-'),
-                'endPage': he.get('endPage', '-'),
-                'tanggal': str(sr.get('created_at', ''))[:10],
-                'tanggal_indo': format_indo_date(sr.get('created_at'))
-            })
             
     last_ziyadah = None
     for a in reversed(achievements):
@@ -426,7 +373,7 @@ for s in santri_rows:
         else:
             jk = 'Laki-laki'
 
-    # Compact raw records for dynamic client-side date filtering
+    # Compact raw records for dynamic client-side date filtering (excluding evaluasi Sabtu)
     raw_achievements = [
         {
             'id': a['id'],
@@ -450,15 +397,6 @@ for s in santri_rows:
             'created_at': str(t.get('created_at', ''))[:10],
             'created_at_indo': format_indo_date(t.get('created_at'))
         } for t in tests
-    ]
-
-    raw_sabtu = [
-        {
-            'id': sr['id'],
-            'created_at': str(sr.get('created_at', ''))[:10],
-            'created_at_indo': format_indo_date(sr.get('created_at')),
-            'hafalan_tidak_lancar': sr.get('hafalan_tidak_lancar', [])
-        } for sr in sabtu_reps
     ]
 
     all_santri.append({
@@ -486,8 +424,6 @@ for s in santri_rows:
         'tidak_lancar_tests': tidak_lancar_tests,
         'tidak_lancar_str': ", ".join(f"Juz {x}" for x in tidak_lancar_tests) if tidak_lancar_tests else "-",
         'achieved_not_tested': achieved_not_tested,
-        'sabtu_issues_count': len(sabtu_issues),
-        'sabtu_issues': sabtu_issues,
         'has_syahadah': len(syahadahs) > 0,
         'syahadah_count': len(syahadahs),
         'highest_syahadah_num': highest_sy_num,
@@ -503,8 +439,7 @@ for s in santri_rows:
         'fluency_label': fluency_label,
         'fluency_desc': fluency_desc,
         'raw_achievements': raw_achievements,
-        'raw_tests': raw_tests,
-        'raw_sabtu': raw_sabtu
+        'raw_tests': raw_tests
     })
 
 # Summary Stats for Kelas 1, 2, 3 only
@@ -515,6 +450,7 @@ syahadah_holders = sum(1 for s in all_santri if s['has_syahadah'])
 total_syahadah_certs = sum(s['syahadah_count'] for s in all_santri)
 total_juz_memorized = sum(s['total_juz_dicapai'] for s in all_santri)
 total_juz_fluent = sum(s['total_juz_lancar'] for s in all_santri)
+total_juziyah_exams = sum(s['juziyah_count'] for s in all_santri)
 
 syahadah_tier_counts = Counter()
 for s in all_santri:
@@ -576,7 +512,7 @@ dataset = {
         'generated_at': '2026-11-18 WITA',
         'generated_at_indo': format_indo_date('2026-11-18'),
         'database_source': 'everynight-in-my-dream.db',
-        'scope': 'Hanya Santri Kelas 1, 2, dan 3 (Alumni tidak dimasukkan)',
+        'scope': 'Hanya Santri Kelas 1, 2, dan 3 (Alumni dan Laporan Evaluasi Sabtu tidak disertakan)',
         'institution_name': 'Pesantren Tahfidzul Quran',
         'timezone': 'Asia/Makassar (WITA)',
         'min_date': min_date,
@@ -593,9 +529,9 @@ dataset = {
         'total_sertifikat_syahadah': total_syahadah_certs,
         'total_juz_dihafal': total_juz_memorized,
         'total_juz_lancar': total_juz_fluent,
+        'total_juziyah_exams': total_juziyah_exams,
         'total_pencapaian_records': len(pencapaian_rows),
         'total_tes_records': len(tes_rows),
-        'total_laporansabtu_records': len(sabtu_rows),
         'syahadah_tier_counts': dict(syahadah_tier_counts),
         'ready_for_syahadah_count': len(ready_for_syahadah_list),
         'in_progress_non_syahadah_count': len(in_progress_non_syahadah),
@@ -610,4 +546,4 @@ dataset = {
 with open('full_report_dataset.json', 'w', encoding='utf-8') as f:
     json.dump(dataset, f, ensure_ascii=False, indent=2)
 
-print(f"Dataset successfully created for Classes 1, 2, 3 only: {total_students} santri, {syahadah_holders} lulus syahadah. Date bounds: {min_date} ({format_indo_date(min_date)}) to {max_date} ({format_indo_date(max_date)}).")
+print(f"Dataset successfully created (Evaluasi Sabtu dikecualikan): {total_students} santri, {syahadah_holders} lulus syahadah, {total_juziyah_exams} ujian juziyah. Date bounds: {min_date} ({format_indo_date(min_date)}) to {max_date} ({format_indo_date(max_date)}).")

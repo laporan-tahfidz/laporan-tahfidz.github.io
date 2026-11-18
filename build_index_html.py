@@ -136,7 +136,7 @@ html_content = """<!DOCTYPE html>
               </span>
             </h1>
             <p class="text-[10px] sm:text-xs text-slate-500 truncate">
-              Evaluasi Hafalan, Syahadah 5-Juz, & Mutqin Santri
+              Evaluasi Hafalan, Ujian Juziyah, Syahadah 5-Juz, & Mutqin Santri
             </p>
           </div>
         </div>
@@ -207,7 +207,7 @@ html_content = """<!DOCTYPE html>
               </span>
             </div>
             <p class="text-xs text-slate-500 mt-0.5" id="dateFilterDescription">
-              Menampilkan seluruh pencapaian sejak awal tahun ajaran. Pilih tanggal atau klik tombol pintas di bawah untuk memfilter rentang waktu tertentu.
+              Menampilkan pencapaian santri dalam periode yang Anda pilih. Pilih tanggal atau klik tombol pintas di bawah.
             </p>
           </div>
         </div>
@@ -288,7 +288,7 @@ html_content = """<!DOCTYPE html>
     <!-- ========================================================================================= -->
     <div id="content-ringkasan" class="tab-content space-y-6">
 
-      <!-- Executive KPI Cards -->
+      <!-- Executive KPI Cards (6 Tahfidz Metrics - Evaluasi Sabtu Excluded) -->
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-4">
         
         <!-- KPI 1: Santri -->
@@ -315,7 +315,7 @@ html_content = """<!DOCTYPE html>
             <div class="text-xl sm:text-2xl font-black text-amber-900" id="kpi-total-syahadah">19</div>
           </div>
           <div class="mt-2 text-[10px] sm:text-[11px] text-slate-500 font-medium border-t border-slate-100 pt-1.5" id="kpi-sub-syahadah">
-            22 Sertifikat Kelulusan
+            22 Sertifikat (5-Juz Mutqin)
           </div>
         </div>
 
@@ -347,31 +347,31 @@ html_content = """<!DOCTYPE html>
           </div>
         </div>
 
-        <!-- KPI 5: Riwayat Catatan -->
+        <!-- KPI 5: Ujian Juziyah Tuntas -->
         <div class="bg-white rounded-2xl p-3.5 sm:p-4 border border-slate-200 shadow-xs flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between text-slate-400 mb-1.5">
-              <span class="text-[11px] font-semibold text-slate-500">Total Aktivitas</span>
+              <span class="text-[11px] font-semibold text-slate-500">Ujian Juziyah</span>
+              <i data-lucide="bookmark-check" class="w-4 h-4 text-indigo-600"></i>
+            </div>
+            <div class="text-xl sm:text-2xl font-black text-indigo-900" id="kpi-total-juziyah">150</div>
+          </div>
+          <div class="mt-2 text-[10px] sm:text-[11px] text-slate-500 font-medium border-t border-slate-100 pt-1.5" id="kpi-sub-juziyah">
+            Ujian 1-Juz Sekali Duduk
+          </div>
+        </div>
+
+        <!-- KPI 6: Total Aktivitas Setoran & Ujian -->
+        <div class="bg-white rounded-2xl p-3.5 sm:p-4 border border-slate-200 shadow-xs flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-slate-400 mb-1.5">
+              <span class="text-[11px] font-semibold text-slate-500">Total Setor & Tes</span>
               <i data-lucide="file-text" class="w-4 h-4 text-blue-600"></i>
             </div>
             <div class="text-xl sm:text-2xl font-black text-slate-800" id="kpi-total-pencapaian">3.670</div>
           </div>
           <div class="mt-2 text-[10px] sm:text-[11px] text-slate-500 font-medium border-t border-slate-100 pt-1.5" id="kpi-sub-pencapaian">
             3.449 Setor • 221 Tes
-          </div>
-        </div>
-
-        <!-- KPI 6: Laporan Sabtu -->
-        <div class="bg-white rounded-2xl p-3.5 sm:p-4 border border-slate-200 shadow-xs flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between text-slate-400 mb-1.5">
-              <span class="text-[11px] font-semibold text-slate-500">Evaluasi Musyrif</span>
-              <i data-lucide="clipboard-check" class="w-4 h-4 text-indigo-600"></i>
-            </div>
-            <div class="text-xl sm:text-2xl font-black text-slate-800" id="kpi-total-sabtu">226</div>
-          </div>
-          <div class="mt-2 text-[10px] sm:text-[11px] text-slate-500 font-medium border-t border-slate-100 pt-1.5" id="kpi-sub-sabtu">
-            Laporan Evaluasi Sabtu
           </div>
         </div>
 
@@ -436,19 +436,16 @@ html_content = """<!DOCTYPE html>
           </div>
         </div>
 
-        <!-- Chart 3: Peta Kendala Juz -->
+        <!-- Chart 3: Peta Kendala Ujian Kelancaran -->
         <div class="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-5 border border-slate-200 shadow-xs lg:col-span-2">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
             <div>
-              <h4 class="font-bold text-sm sm:text-base text-slate-900">Peta Tingkat Kesulitan 30 Juz Al-Qur'an</h4>
-              <p class="text-xs text-slate-500">Frekuensi catatan evaluasi Sabtu dan tes kelancaran yang belum lulus per juz</p>
+              <h4 class="font-bold text-sm sm:text-base text-slate-900">Peta Tingkat Kesulitan 30 Juz Al-Qur'an (Remidi Ujian Kelancaran)</h4>
+              <p class="text-xs text-slate-500">Jumlah frekuensi tes kelancaran yang belum lulus / perlu remidi per juz</p>
             </div>
-            <div class="flex items-center gap-3 text-xs">
+            <div class="flex items-center gap-2 text-xs">
               <span class="flex items-center gap-1.5 text-rose-600 font-medium">
-                <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span> Belum Lulus Tes
-              </span>
-              <span class="flex items-center gap-1.5 text-amber-600 font-medium">
-                <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span> Catatan Rapuh Sabtu
+                <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span> Jumlah Remidi Tes Kelancaran
               </span>
             </div>
           </div>
@@ -508,7 +505,7 @@ html_content = """<!DOCTYPE html>
                 <i data-lucide="alert-triangle" class="w-4 h-4 text-rose-500"></i>
                 Juz Paling Menantang
               </h4>
-              <span class="text-[10px] font-semibold text-slate-400">Paling Sering Rapuh</span>
+              <span class="text-[10px] font-semibold text-slate-400">Paling Banyak Remidi</span>
             </div>
             <div class="space-y-2" id="list-challenging-juz">
               <!-- Rendered via JS -->
@@ -654,12 +651,12 @@ html_content = """<!DOCTYPE html>
           </span>
           <div>
             <h3 class="text-base sm:text-lg font-bold text-slate-900">Status Kelancaran & Pengujian Mutqin</h3>
-            <p class="text-xs sm:text-sm text-slate-500">Mengetahui siapa santri yang paling lancar (teruji mutqin) dan siapa yang membutuhkan bimbingan intensif / remidi.</p>
+            <p class="text-xs sm:text-sm text-slate-500">Mengetahui siapa santri yang paling lancar (teruji mutqin) dan siapa yang sedang dalam proses remidi ujian kelancaran.</p>
           </div>
         </div>
       </div>
 
-      <!-- Dual Section: Paling Lancar vs Perlu Murajaah -->
+      <!-- Dual Section: Paling Lancar vs Perlu Remidi -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
         
         <!-- Kolom Kiri: Santri Paling Lancar -->
@@ -697,7 +694,7 @@ html_content = """<!DOCTYPE html>
           </div>
         </div>
 
-        <!-- Kolom Kanan: Butuh Perhatian / Remidi -->
+        <!-- Kolom Kanan: Butuh Perhatian / Remidi Ujian -->
         <div class="bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xs overflow-hidden flex flex-col justify-between">
           <div>
             <div class="p-4 bg-rose-50/50 border-b border-rose-100 flex items-center justify-between">
@@ -706,7 +703,7 @@ html_content = """<!DOCTYPE html>
                   <i data-lucide="alert-circle" class="w-4 h-4 text-rose-600"></i>
                   Santri Membutuhkan Bimbingan & Remidi
                 </h4>
-                <p class="text-[11px] text-rose-800">Santri yang memiliki catatan tes belum lancar atau catatan rapuh di evaluasi Sabtu</p>
+                <p class="text-[11px] text-rose-800">Santri yang memiliki catatan tes kelancaran yang belum lulus</p>
               </div>
               <span class="text-xs font-bold text-rose-800 bg-rose-100 px-2 py-0.5 rounded-full">Perlu Murajaah</span>
             </div>
@@ -721,8 +718,8 @@ html_content = """<!DOCTYPE html>
                   <tr>
                     <th class="py-2 px-3">Nama</th>
                     <th class="py-2 px-3">Kelas</th>
-                    <th class="py-2 px-3">Juz Remidi</th>
-                    <th class="py-2 px-3">Catatan Sabtu</th>
+                    <th class="py-2 px-3">Juz Belum Lulus</th>
+                    <th class="py-2 px-3">Status Remidi</th>
                     <th class="py-2 px-3 text-center">Aksi</th>
                   </tr>
                 </thead>
@@ -939,6 +936,7 @@ html_content = """<!DOCTYPE html>
           <div class="space-y-2 text-xs text-slate-600">
             <div><strong class="text-slate-800">Ziyadah:</strong> Penambahan hafalan ayat baru.</div>
             <div><strong class="text-slate-800">Murajaah:</strong> Mengulang kembali hafalan yang sudah pernah disetor.</div>
+            <div><strong class="text-slate-800">Juziyah:</strong> Ujian kelulusan 1 juz lengkap sekali duduk.</div>
             <div><strong class="text-slate-800">Mutqin:</strong> Hafalan yang sangat kuat, lancar tanpa tersendat, dan tajwidnya benar.</div>
             <div><strong class="text-slate-800">Syahadah:</strong> Sertifikasi hafalan 5 juz sekali duduk yang diuji langsung oleh penguji senior.</div>
           </div>
@@ -1050,8 +1048,8 @@ html_content = """<!DOCTYPE html>
           </div>
 
           <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200">
-            <div class="text-[10px] uppercase font-bold text-slate-500">Kelancaran</div>
-            <div class="text-xs font-bold text-slate-800 mt-1 truncate" id="modal-fluency-badge">-</div>
+            <div class="text-[10px] uppercase font-bold text-slate-500">Ujian Juziyah</div>
+            <div class="text-lg font-black text-slate-800 mt-0.5" id="modal-juziyah-count">0 Juziyah</div>
             <div class="text-[10px] text-rose-600 font-medium" id="modal-tidak-lancar-count">0 Remidi</div>
           </div>
         </div>
@@ -1117,20 +1115,20 @@ html_content = """<!DOCTYPE html>
           <div class="space-y-2" id="modal-syahadah-list"></div>
         </div>
 
-        <!-- Evaluasi Catatan Rapuh / Laporan Sabtu -->
-        <div class="space-y-2" id="modal-evaluasi-section">
+        <!-- Juziyah History List -->
+        <div class="space-y-2" id="modal-juziyah-section">
           <h4 class="font-bold text-xs sm:text-sm text-slate-900 flex items-center gap-1.5">
-            <i data-lucide="clipboard-list" class="w-4 h-4 text-rose-500"></i>
-            Catatan Perlu Perhatian / Murajaah Sabtu
+            <i data-lucide="bookmark-check" class="w-4 h-4 text-indigo-600"></i>
+            Riwayat Ujian Juziyah (1-Juz Sekali Duduk)
           </h4>
-          <div class="space-y-1.5" id="modal-evaluasi-list"></div>
+          <div class="space-y-1.5" id="modal-juziyah-list"></div>
         </div>
 
         <!-- Rekomendasi Musyrif -->
         <div class="p-3.5 rounded-2xl bg-emerald-50/70 border border-emerald-200 text-xs space-y-1">
           <div class="font-bold text-emerald-950 flex items-center gap-1.5">
             <i data-lucide="message-square" class="w-4 h-4 text-emerald-700"></i>
-            Rekomendasi Musyrif untuk Wali Santri
+            Rekomendasi Bimbingan untuk Santri & Wali
           </div>
           <p class="text-slate-700 leading-relaxed text-[11px]" id="modal-rekomendasi">
             Santri memiliki komitmen yang baik dalam setoran harian.
@@ -1229,14 +1227,14 @@ DATA_JSON_PLACEHOLDER
       lucide.createIcons();
     }
 
-    // Dynamic Period Computation
+    // Dynamic Period Computation (Excluding Evaluasi Sabtu)
     function computePeriodData(startDate, endDate) {
       const isAllTime = (startDate <= DB.metadata.min_date && endDate >= DB.metadata.max_date);
       
       let totalPencapaian = 0;
       let totalTes = 0;
-      let totalSabtu = 0;
       let totalSyahadahCerts = 0;
+      let totalJuziyahExams = 0;
       let syahadahTierCounts = { 'pertama': 0, 'kedua': 0, 'ketiga': 0, 'keempat': 0 };
       let syahadahRecords = [];
       let santriActiveCount = 0;
@@ -1245,20 +1243,19 @@ DATA_JSON_PLACEHOLDER
 
       let juzStats = {};
       for (let j = 1; j <= 30; j++) {
-        juzStats[j] = { juz: j, hafal_in_period: 0, tes_lancar_in_period: 0, tes_tl_in_period: 0, issues_in_period: 0 };
+        juzStats[j] = { juz: j, hafal_in_period: 0, tes_lancar_in_period: 0, tes_tl_in_period: 0 };
       }
 
       const periodSantriList = ALL_SANTRI.map(s => {
         const pInPeriod = (s.raw_achievements || []).filter(a => a.created_at >= startDate && a.created_at <= endDate);
         const tInPeriod = (s.raw_tests || []).filter(t => t.created_at >= startDate && t.created_at <= endDate);
-        const sbInPeriod = (s.raw_sabtu || []).filter(sb => sb.created_at >= startDate && sb.created_at <= endDate);
         const syInPeriod = (s.syahadahs || []).filter(sy => sy.created_at >= startDate && sy.created_at <= endDate);
         const jzInPeriod = (s.juziyahs || []).filter(j => j.created_at >= startDate && j.created_at <= endDate);
 
         totalPencapaian += pInPeriod.length;
         totalTes += tInPeriod.length;
-        totalSabtu += sbInPeriod.length;
         totalSyahadahCerts += syInPeriod.length;
+        totalJuziyahExams += jzInPeriod.length;
 
         syInPeriod.forEach(sy => {
           syahadahTierCounts[sy.tingkat] = (syahadahTierCounts[sy.tingkat] || 0) + 1;
@@ -1268,7 +1265,7 @@ DATA_JSON_PLACEHOLDER
           });
         });
 
-        const hasActivity = (pInPeriod.length > 0 || tInPeriod.length > 0 || sbInPeriod.length > 0);
+        const hasActivity = (pInPeriod.length > 0 || tInPeriod.length > 0);
         if (hasActivity) santriActiveCount++;
 
         const juzSetorInPeriod = Array.from(new Set(pInPeriod.filter(a => a.juz).map(a => a.juz)));
@@ -1288,8 +1285,7 @@ DATA_JSON_PLACEHOLDER
         let lastDateIndo = '-';
         let allDates = [
           ...pInPeriod.map(x => x.created_at),
-          ...tInPeriod.map(x => x.created_at),
-          ...sbInPeriod.map(x => x.created_at)
+          ...tInPeriod.map(x => x.created_at)
         ].sort();
         if (allDates.length > 0) {
           lastDateInPeriod = allDates[allDates.length - 1];
@@ -1300,13 +1296,12 @@ DATA_JSON_PLACEHOLDER
           ...s,
           pInPeriod,
           tInPeriod,
-          sbInPeriod,
           period_has_activity: hasActivity,
           period_pencapaian_count: pInPeriod.length,
           period_tests_count: tInPeriod.length,
-          period_sabtu_count: sbInPeriod.length,
           period_syahadahs: syInPeriod,
           period_juziyahs: jzInPeriod,
+          period_juziyah_count: jzInPeriod.length,
           period_juz_setor: juzSetorInPeriod,
           period_juz_setor_count: juzSetorInPeriod.length,
           period_juz_lancar: juzLancarInPeriod,
@@ -1327,8 +1322,8 @@ DATA_JSON_PLACEHOLDER
         periodSantriList,
         totalPencapaian,
         totalTes,
-        totalSabtu,
         totalSyahadahCerts,
+        totalJuziyahExams,
         syahadahTierCounts,
         syahadahRecords,
         santriActiveCount,
@@ -1411,7 +1406,7 @@ DATA_JSON_PLACEHOLDER
       } else {
         badgeText.textContent = 'Semua Waktu';
         spanText.textContent = `${startIndo} s/d ${endIndo}`;
-        statsText.textContent = `(Menampilkan seluruh 44 santri & seluruh riwayat)`;
+        statsText.textContent = `(Menampilkan seluruh 44 santri & riwayat pencapaian)`;
         btnResetInline.classList.add('hidden');
       }
 
@@ -1436,7 +1431,7 @@ DATA_JSON_PLACEHOLDER
         document.getElementById('kpi-sub-santri').innerHTML = `<span class="text-emerald-700 font-semibold">${DB.summary.santri_aktif} Aktif</span> • ${DB.summary.santri_tidak_aktif} Non-aktif`;
         
         document.getElementById('kpi-total-syahadah').textContent = DB.summary.santri_dengan_syahadah;
-        document.getElementById('kpi-sub-syahadah').textContent = `${DB.summary.total_sertifikat_syahadah} Sertifikat Kelulusan`;
+        document.getElementById('kpi-sub-syahadah').textContent = `${DB.summary.total_sertifikat_syahadah} Sertifikat (5-Juz Mutqin)`;
 
         document.getElementById('kpi-total-juz').innerHTML = `${DB.summary.total_juz_dihafal} <span class="text-xs font-normal text-slate-500">Juz</span>`;
         document.getElementById('kpi-sub-juz').textContent = `Rata-rata ${(DB.summary.total_juz_dihafal / DB.summary.total_santri).toFixed(1)} Juz/Santri`;
@@ -1444,11 +1439,11 @@ DATA_JSON_PLACEHOLDER
         document.getElementById('kpi-total-lancar').innerHTML = `${DB.summary.total_juz_lancar} <span class="text-xs font-normal text-slate-500">Juz</span>`;
         document.getElementById('kpi-sub-lancar').textContent = 'Lolos Ujian Kelancaran';
 
+        document.getElementById('kpi-total-juziyah').textContent = DB.summary.total_juziyah_exams || 150;
+        document.getElementById('kpi-sub-juziyah').textContent = 'Ujian 1-Juz Sekali Duduk';
+
         document.getElementById('kpi-total-pencapaian').textContent = (DB.summary.total_pencapaian_records + DB.summary.total_tes_records).toLocaleString('id-ID');
         document.getElementById('kpi-sub-pencapaian').textContent = `${DB.summary.total_pencapaian_records} Setor • ${DB.summary.total_tes_records} Tes`;
-
-        document.getElementById('kpi-total-sabtu').textContent = DB.summary.total_laporansabtu_records;
-        document.getElementById('kpi-sub-sabtu').textContent = 'Laporan Evaluasi Sabtu';
       } else {
         document.getElementById('kpi-total-santri').textContent = data.santriActiveCount;
         document.getElementById('kpi-sub-santri').innerHTML = `<span class="text-emerald-700 font-semibold">${data.santriActiveCount} Menyetor di Periode Ini</span>`;
@@ -1462,11 +1457,11 @@ DATA_JSON_PLACEHOLDER
         document.getElementById('kpi-total-lancar').innerHTML = `${data.totalJuzLancar} <span class="text-xs font-normal text-slate-500">Juz</span>`;
         document.getElementById('kpi-sub-lancar').textContent = `Lolos Tes di Periode Ini`;
 
+        document.getElementById('kpi-total-juziyah').textContent = data.totalJuziyahExams;
+        document.getElementById('kpi-sub-juziyah').textContent = `Ujian Juziyah di Periode Ini`;
+
         document.getElementById('kpi-total-pencapaian').textContent = (data.totalPencapaian + data.totalTes).toLocaleString('id-ID');
         document.getElementById('kpi-sub-pencapaian').textContent = `${data.totalPencapaian} Setor • ${data.totalTes} Tes`;
-
-        document.getElementById('kpi-total-sabtu').textContent = data.totalSabtu;
-        document.getElementById('kpi-sub-sabtu').textContent = 'Laporan di Periode Ini';
       }
 
       // Top Achievers in Period
@@ -1518,13 +1513,13 @@ DATA_JSON_PLACEHOLDER
         </div>
       `).join('');
 
-      // Top Challenging Juz
+      // Top Challenging Juz (Remidi Tes Kelancaran)
       const juzEntries = Object.values(data.juzStats || {}).map(j => ({
         ...j,
-        surah: (DB.juz_stats.find(js => js.juz === j.juz) || {}).surah || `Juz ${j.juz}`,
+        surah: (DB.juz_stats.find(js => js.juz === j.juz) || {}).name || `Juz ${j.juz}`,
         hafal_count: (DB.juz_stats.find(js => js.juz === j.juz) || {}).hafal_count || 0,
-        total_issues: (j.tes_tl_in_period || 0) + (j.issues_in_period || 0)
-      })).sort((a,b) => b.total_issues - a.total_issues).slice(0, 5);
+        total_remidi: data.isAllTime ? ((DB.juz_stats.find(js => js.juz === j.juz) || {}).tes_tidak_lancar || 0) : (j.tes_tl_in_period || 0)
+      })).sort((a,b) => b.total_remidi - a.total_remidi).slice(0, 5);
 
       document.getElementById('list-challenging-juz').innerHTML = juzEntries.map(j => `
         <div class="flex items-center justify-between p-2 rounded-xl bg-slate-50 border border-slate-100">
@@ -1536,8 +1531,8 @@ DATA_JSON_PLACEHOLDER
             </div>
           </div>
           <div class="text-right shrink-0 ml-2">
-            <div class="font-bold text-rose-600 text-xs">${j.total_issues}x Kendala</div>
-            <div class="text-[9px] text-slate-400">${j.tes_tl_in_period}x remidi</div>
+            <div class="font-bold text-rose-600 text-xs">${j.total_remidi}x Remidi</div>
+            <div class="text-[9px] text-slate-400">Ujian Kelancaran</div>
           </div>
         </div>
       `).join('');
@@ -1670,27 +1665,28 @@ DATA_JSON_PLACEHOLDER
         });
       }
 
-      // 3. Chart Juz Issues
+      // 3. Chart Juz Issues (Purely Tes Remidi - Evaluasi Sabtu Excluded)
       const ctxJuz = document.getElementById('chartJuzIssuesFull')?.getContext('2d');
       if (ctxJuz) {
         if (chartInstanceJuz) chartInstanceJuz.destroy();
-        const sortedJuz = [...DB.juz_stats].sort((a,b) => (b.tes_tidak_lancar + b.sabtu_issues) - (a.tes_tidak_lancar + a.sabtu_issues));
+        
+        let sortedJuz;
+        if (data.isAllTime) {
+          sortedJuz = [...DB.juz_stats].sort((a,b) => b.tes_tidak_lancar - a.tes_tidak_lancar);
+        } else {
+          sortedJuz = Object.values(data.juzStats || {}).sort((a,b) => b.tes_tl_in_period - a.tes_tl_in_period);
+        }
+
         chartInstanceJuz = new Chart(ctxJuz, {
           type: 'bar',
           data: {
             labels: sortedJuz.map(j => 'J' + j.juz),
             datasets: [
               {
-                label: 'Gagal Tes',
-                data: sortedJuz.map(j => j.tes_tidak_lancar),
+                label: data.isAllTime ? 'Remidi Tes Kelancaran' : 'Remidi Tes Periode Ini',
+                data: sortedJuz.map(j => data.isAllTime ? j.tes_tidak_lancar : j.tes_tl_in_period),
                 backgroundColor: '#ef4444',
-                borderRadius: 3
-              },
-              {
-                label: 'Catatan Rapuh',
-                data: sortedJuz.map(j => j.sabtu_issues),
-                backgroundColor: '#f97316',
-                borderRadius: 3
+                borderRadius: 4
               }
             ]
           },
@@ -1701,8 +1697,8 @@ DATA_JSON_PLACEHOLDER
               legend: { labels: { color: textColor, font: { size: 10 } } }
             },
             scales: {
-              x: { stacked: true, ticks: { color: textColor, font: { size: 8 } }, grid: { display: false } },
-              y: { stacked: true, ticks: { color: textColor, font: { size: 9 } }, grid: { color: gridColor }, beginAtZero: true }
+              x: { ticks: { color: textColor, font: { size: 9 } }, grid: { display: false } },
+              y: { ticks: { color: textColor, font: { size: 9 } }, grid: { color: gridColor }, beginAtZero: true }
             }
           }
         });
@@ -1843,7 +1839,7 @@ DATA_JSON_PLACEHOLDER
             </div>
             <div class="text-[11px] text-slate-600 bg-slate-50 p-2 rounded-lg border border-slate-100">
               <div><strong>Cakupan:</strong> ${sy.juz_cakupan_str}</div>
-              <div class="text-[10px] text-slate-500 mt-0.5 font-medium">Penguji: ${sy.penguji} • <strong>${dateFormatted}</strong></div>
+              <div class="text-[10px] text-slate-500 mt-0.5 font-medium">Penguji: ${sy.penguji} • <strong class="text-emerald-800">${dateFormatted}</strong></div>
               ${sy.catatan ? `<div class="italic text-[10px] text-slate-500 mt-1">"${sy.catatan}"</div>` : ''}
             </div>
             <button onclick="openSantriModal(${s.id})" class="w-full py-1.5 rounded-lg bg-emerald-50 text-emerald-800 font-semibold text-xs border border-emerald-200">
@@ -1911,24 +1907,24 @@ DATA_JSON_PLACEHOLDER
 
       const needAttn = [...listSantri].filter(s => {
         if (!data.isAllTime) {
-          return s.period_juz_tidak_lancar_count > 0 || s.period_sabtu_count > 0;
+          return s.period_juz_tidak_lancar_count > 0;
         }
-        return s.total_tidak_lancar > 0 || s.sabtu_issues_count > 0;
+        return s.total_tidak_lancar > 0;
       }).sort((a,b) => {
         if (!data.isAllTime) {
-          return (b.period_juz_tidak_lancar_count + b.period_sabtu_count) - (a.period_juz_tidak_lancar_count + a.period_sabtu_count);
+          return b.period_juz_tidak_lancar_count - a.period_juz_tidak_lancar_count;
         }
-        return (b.total_tidak_lancar + b.sabtu_issues_count) - (a.total_tidak_lancar + a.sabtu_issues_count);
+        return b.total_tidak_lancar - a.total_tidak_lancar;
       });
       
       document.getElementById('list-need-attention-mobile').innerHTML = needAttn.map(s => `
         <div onclick="openSantriModal(${s.id})" class="p-3 bg-white hover:bg-slate-50 cursor-pointer transition flex items-center justify-between">
           <div class="truncate mr-2">
             <div class="font-bold text-xs text-slate-900 truncate">${s.nama}</div>
-            <div class="text-[10px] text-slate-400 truncate">${s.kelas_name} • ${data.isAllTime ? (s.total_tidak_lancar > 0 ? s.tidak_lancar_str : 'Laporan Sabtu rapuh') : (s.period_juz_tidak_lancar.map(j=>'Juz '+j).join(', ') || 'Catatan Sabtu')}</div>
+            <div class="text-[10px] text-slate-400 truncate">${s.kelas_name} • ${data.isAllTime ? s.tidak_lancar_str : (s.period_juz_tidak_lancar.map(j=>'Juz '+j).join(', ') || '-')}</div>
           </div>
           <span class="px-2 py-1 rounded text-xs font-bold bg-rose-100 text-rose-800 shrink-0">
-            ${data.isAllTime ? (s.total_tidak_lancar > 0 ? `${s.total_tidak_lancar} Juz Remidi` : `${s.sabtu_issues_count}x Catatan`) : `${s.period_juz_tidak_lancar_count} Remidi • ${s.period_sabtu_count} Catatan`}
+            ${data.isAllTime ? `${s.total_tidak_lancar} Juz Remidi` : `${s.period_juz_tidak_lancar_count} Juz Remidi`}
           </span>
         </div>
       `).join('');
@@ -1937,8 +1933,8 @@ DATA_JSON_PLACEHOLDER
         <tr class="hover:bg-slate-50 transition cursor-pointer" onclick="openSantriModal(${s.id})">
           <td class="py-2 px-3 font-bold text-slate-900">${s.nama}</td>
           <td class="py-2 px-3 text-[11px] text-slate-500">${s.kelas_name}</td>
-          <td class="py-2 px-3 font-bold text-rose-700">${data.isAllTime ? (s.total_tidak_lancar > 0 ? s.tidak_lancar_str : 'Lolos Tes') : (s.period_juz_tidak_lancar.map(j=>'Juz '+j).join(', ') || '-')}</td>
-          <td class="py-2 px-3 text-[11px] text-amber-700 font-medium">${data.isAllTime ? `${s.sabtu_issues_count} catatan` : `${s.period_sabtu_count} catatan`}</td>
+          <td class="py-2 px-3 font-bold text-rose-700">${data.isAllTime ? s.tidak_lancar_str : (s.period_juz_tidak_lancar.map(j=>'Juz '+j).join(', ') || '-')}</td>
+          <td class="py-2 px-3 text-[11px] text-amber-700 font-medium">Perlu Pengulangan Tes</td>
           <td class="py-2 px-3 text-center"><button class="px-2 py-0.5 text-[11px] font-semibold rounded bg-rose-50 text-rose-800">Bimbing</button></td>
         </tr>
       `).join('');
@@ -2229,8 +2225,8 @@ DATA_JSON_PLACEHOLDER
         document.getElementById('modal-syahadah-count').textContent = s.total_juz_dicapai >= 5 ? 'Siap Ujian 1' : 'Dalam Proses';
       }
 
-      document.getElementById('modal-fluency-badge').textContent = s.fluency_label;
-      document.getElementById('modal-tidak-lancar-count').textContent = `${s.total_tidak_lancar} Remidi • ${s.sabtu_issues_count} Rapuh`;
+      document.getElementById('modal-juziyah-count').textContent = `${s.juziyah_count} Juziyah`;
+      document.getElementById('modal-tidak-lancar-count').textContent = `${s.total_tidak_lancar} Juz Remidi`;
 
       document.getElementById('modal-target-title').textContent = s.syahadah_status_summary;
       document.getElementById('modal-target-pct').textContent = `${s.syahadah_progress_pct}%`;
@@ -2280,24 +2276,24 @@ DATA_JSON_PLACEHOLDER
         sySection.classList.add('hidden');
       }
 
-      const evSection = document.getElementById('modal-evaluasi-section');
-      const evList = document.getElementById('modal-evaluasi-list');
-      if (s.sabtu_issues.length > 0) {
-        evSection.classList.remove('hidden');
-        evList.innerHTML = s.sabtu_issues.slice(0, 4).map(iss => {
-          const formattedDate = formatIndoDate(iss.tanggal);
+      const jzSection = document.getElementById('modal-juziyah-section');
+      const jzList = document.getElementById('modal-juziyah-list');
+      if (s.juziyahs.length > 0) {
+        jzSection.classList.remove('hidden');
+        jzList.innerHTML = s.juziyahs.map(j => {
+          const formattedDate = formatIndoDate(j.created_at);
           return `
-            <div class="p-2 rounded-lg bg-rose-50 border border-rose-200 text-xs flex items-center justify-between">
+            <div class="p-2.5 rounded-xl bg-indigo-50/70 border border-indigo-200 text-xs flex items-center justify-between">
               <div>
-                <strong class="text-rose-800">Juz ${iss.juz || '-'}</strong>
-                <span class="text-slate-500 ml-1.5 text-[11px]">Hal ${iss.startPage} s.d. ${iss.endPage}</span>
+                <strong class="text-indigo-950 font-bold">Juz ${j.juz}</strong>
+                <span class="text-slate-500 ml-2 text-[11px]">Predikat: <strong class="text-emerald-800">${j.predikat}</strong> (${j.kesalahan} salah)</span>
               </div>
-              <span class="text-[11px] font-semibold text-slate-500">${formattedDate}</span>
+              <span class="text-[11px] font-semibold text-slate-600">${formattedDate}</span>
             </div>
           `;
         }).join('');
       } else {
-        evSection.classList.add('hidden');
+        jzSection.classList.add('hidden');
       }
 
       let rek = `Alhamdulillah, ananda ${s.nama} (${s.kelas_name}) saat ini telah menyelesaikan ${s.total_juz_dicapai} Juz. `;

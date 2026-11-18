@@ -3,7 +3,7 @@
 Aplikasi dashboard eksekutif dan laporan interaktif pencapaian tahfidz santri berbasis data SQLite (`everynight-in-my-dream.db`). Dirancang khusus agar **mudah dipahami oleh orang awam dan wali santri**, menggunakan **format tanggal lengkap bahasa Indonesia** (*contoh: Selasa, 30 Januari 2024*), memiliki **fitur filter rentang waktu interaktif**, tampilan **terang (Light Mode)** yang sejuk, serta **sangat optimal dibuka di layar ponsel pintar (HP/Smartphone)** maupun desktop.
 
 > [!NOTE]
-> **Cakupan Data**: Laporan ini secara ketat **hanya menampilkan data santri Kelas 1, Kelas 2, dan Kelas 3 (Total 44 santri)**. Angkatan senior terdahulu (2020–2023) dan alumni tidak disertakan.
+> **Cakupan Data**: Laporan ini secara ketat **hanya menampilkan data santri Kelas 1, Kelas 2, dan Kelas 3 (Total 44 santri)**. Angkatan senior terdahulu (2020–2023), alumni, serta **data evaluasi Sabtu (`laporansabtu`) dikecualikan**.
 
 ---
 
@@ -21,7 +21,7 @@ Aplikasi dashboard eksekutif dan laporan interaktif pencapaian tahfidz santri be
     - **Semester Genap 2026**: Rentang Januari 2026 s/d Juni 2026.
     - **30 Hari Terakhir**: Aktivitas 30 hari terakhir santri.
   - **Perhitungan Ulang Instan (Zero Reload)**:
-    - Seluruh metrik KPI (santri menyetor, setoran juz, lulus syahadah, tes lancar, laporan evaluasi) otomatis dihitung ulang dalam hitungan milidetik.
+    - Seluruh metrik KPI (santri menyetor, setoran juz, lulus syahadah, tes lancar, ujian juziyah) otomatis dihitung ulang dalam hitungan milidetik.
     - Ke-4 grafik visual (Chart.js) diperbarui secara dinamis mengikuti rentang waktu terpilih.
     - Tabel & kartu Syahadah hanya menampilkan santri yang mengambil ujian pada rentang waktu tersebut.
     - Modal rapor 30 juz menyorot juz yang disetor atau diuji pada rentang waktu terpilih dengan bingkai khusus (*ring highlight*).
@@ -37,30 +37,30 @@ Aplikasi dashboard eksekutif dan laporan interaktif pencapaian tahfidz santri be
 ### 3. 📊 Ringkasan Eksekutif (Dashboard KPI)
 - **6 Indikator Kunci Dinamis**:
   1. **Santri Terdaftar / Menyetor**: 44 santri terdaftar (42 aktif).
-  2. **Kelulusan Syahadah**: 19 santri (22 sertifikat kelulusan).
+  2. **Kelulusan Syahadah**: 19 santri (22 sertifikat kelulusan 5-juz mutqin).
   3. **Akumulasi Setoran Juz**: 334 juz hafal (rata-rata 7,6 juz/santri).
   4. **Juz Teruji Mutqin / Lancar**: 96 juz lulus ujian kelancaran.
-  5. **Total Catatan Aktivitas**: 3.449 setoran & 221 ujian.
-  6. **Laporan Evaluasi Musyrif**: 226 evaluasi Sabtu.
+  5. **Ujian Juziyah Tuntas**: 150 ujian kelulusan 1-juz sekali duduk.
+  6. **Total Catatan Aktivitas**: 3.670 catatan (3.449 setoran & 221 tes).
 - **Grafik Interaktif (Chart.js)**:
   - Komparasi Capaian per Jenjang Kelas (Ula, Wustho, Ulya).
   - Proporsi Kelulusan Syahadah.
-  - Peta Kendala Kesulitan 30 Juz Al-Qur'an.
+  - Peta Kendala Remidi Ujian Kelancaran 30 Juz Al-Qur'an.
   - Top 5 Santri Hafalan Terbanyak & Top 5 Santri Paling Mutqin.
 
 ### 4. 📜 Laporan Khusus Syahadah (Ujian Akbar 5-Juz Sekali Duduk)
 - **Daftar Lulusan Syahadah**:
   - Daftar peraih Syahadah 1 (5 Juz), Syahadah 2 (10 Juz), Syahadah 3 (15 Juz), hingga Syahadah 4 (20 Juz).
   - Rincian predikat resmi: **Mumtaz** (0-10 kesalahan), **Jayyid Jiddan** (11-20 kesalahan), **Jayyid** (21-30 kesalahan).
-  - Nama penguji, tanggal ujian resmi, dan catatan evaluasi musyrif.
+  - Nama penguji, tanggal ujian resmi (format bahasa Indonesia), dan catatan dewan penguji.
 - **Analisis Kesiapan Ujian**:
   - **Kelompok Siap Ujian (9 santri)**: Santri yang hafalannya sudah mencapai &ge;5 juz namun belum mengambil ujian Syahadah resmi.
   - **Kelompok Sedang Berproses (15 santri)**: Santri yang sedang berproses menghafal 1–4 juz awal.
 
 ### 5. 🎯 Analisis Kelancaran & Peta Hambatan 30 Juz
 - **Daftar Santri Paling Lancar (Top Mutqin)**.
-- **Daftar Santri Butuh Penguatan (Perlu Murajaah / Remidi)**.
-- **Peta Kendala 30 Juz**: Menganalisis juz mana saja yang paling menantang bagi santri (Juz 1, 2, 29, 3) disertai catatan perbaikan tajwid/makhraj.
+- **Daftar Santri Membutuhkan Bimbingan & Remidi**: Menampilkan santri yang belum lulus tes kelancaran.
+- **Peta Kendala 30 Juz**: Menganalisis juz mana saja yang paling banyak memerlukan remidi tes kelancaran (Juz 1, 2, 29, 4, 3, 30).
 
 ### 6. 👥 Pengelompokan Kelas & Halaqah
 - **Berdasarkan Jenjang Kelas**:
@@ -76,7 +76,7 @@ Aplikasi dashboard eksekutif dan laporan interaktif pencapaian tahfidz santri be
 - **Modal Interaktif 30 Juz Visual Grid**:
   - Peta kisi 30 Juz (Hijau = Lancar/Mutqin, Kuning = Selesai setor belum tes, Merah = Butuh remidi, Abu-abu = Belum mulai).
   - Sorotan khusus (*highlight ring*) untuk juz yang disetor pada rentang waktu terpilih.
-  - Riwayat ujian Syahadah, ujian Juziyah, dan evaluasi Sabtu lengkap dengan tanggal format bahasa Indonesia.
+  - Riwayat ujian Syahadah dan ujian Juziyah lengkap dengan tanggal format bahasa Indonesia.
   - Rekomendasi personal musyrif untuk orang tua / wali santri di rumah.
 
 ### 8. 📖 Panduan Awam & Glosarium
@@ -117,6 +117,6 @@ Jika ada pembaruan data di database SQLite `everynight-in-my-dream.db`:
 python build_index_html.py
 ```
 Skrip ini akan secara otomatis:
-1. Membaca data terbaru untuk santri Kelas 1, 2, dan 3 (`process_classes_123.py`).
+1. Membaca data terbaru untuk santri Kelas 1, 2, dan 3 (`process_classes_123.py`) tanpa menyertakan evaluasi Sabtu.
 2. Menghasilkan dataset terstruktur `full_report_dataset.json` lengkap dengan tanggal bahasa Indonesia dan rekaman aktivitas mentah.
 3. Memperbarui `index.html`.
