@@ -1,10 +1,27 @@
 import sqlite3
 import json
+import datetime
 from collections import defaultdict, Counter
 
 conn = sqlite3.connect('everynight-in-my-dream.db')
 conn.row_factory = sqlite3.Row
 c = conn.cursor()
+
+days_indo = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu']
+months_indo = ['', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 
+               'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
+
+def format_indo_date(date_val):
+    if not date_val:
+        return '-'
+    s = str(date_val).strip()[:10]
+    try:
+        dt = datetime.datetime.strptime(s, '%Y-%m-%d')
+        day_name = days_indo[dt.weekday()]
+        month_name = months_indo[dt.month]
+        return f"{day_name}, {dt.day} {month_name} {dt.year}"
+    except Exception:
+        return s
 
 juz_surah_names = {
     1: "Al-Fatihah 1 - Al-Baqarah 141",
@@ -78,8 +95,13 @@ pencapaian_rows = c.execute(
 
 pencapaian_by_nik = defaultdict(list)
 pencapaian_by_id = defaultdict(list)
+all_record_dates = []
+
 for r in pencapaian_rows:
     p = dict(r)
+    dt_str = str(p.get('created_at', ''))[:10]
+    if dt_str:
+        all_record_dates.append(dt_str)
     if p.get('nik'):
         pencapaian_by_nik[str(p['nik'])].append(p)
     if p.get('santri_id'):
@@ -95,6 +117,9 @@ tes_by_nik = defaultdict(list)
 tes_by_id = defaultdict(list)
 for r in tes_rows:
     t = dict(r)
+    dt_str = str(t.get('created_at', ''))[:10]
+    if dt_str:
+        all_record_dates.append(dt_str)
     if t.get('nik'):
         tes_by_nik[str(t['nik'])].append(t)
     if t.get('santri_id'):
@@ -110,6 +135,9 @@ sabtu_by_nik = defaultdict(list)
 sabtu_by_id = defaultdict(list)
 for r in sabtu_rows:
     ls = dict(r)
+    dt_str = str(ls.get('created_at', ''))[:10]
+    if dt_str:
+        all_record_dates.append(dt_str)
     try:
         ls['murajaah'] = json.loads(ls['murajaahentries']) if ls['murajaahentries'] else []
     except:
@@ -126,6 +154,9 @@ for r in sabtu_rows:
             sabtu_by_id[int(ls['santri_id'])].append(ls)
         except:
             pass
+
+min_date = min(all_record_dates) if all_record_dates else '2026-01-01'
+max_date = max(all_record_dates) if all_record_dates else '2026-11-18'
 
 syahadah_groups = {
     'pertama': [30, 29, 1, 2, 3],
@@ -158,13 +189,13 @@ def syahadah_to_num(sy_text):
     return m.get(sy_text.lower(), 1) if sy_text else 0
 
 all_santri = []
-juz_stats = {j: {'juz': j, 'surah': juz_surah_names.get(j, ''), 'hafal_count': 0, 'tes_lancar': 0, 'tes_tidak_lancar': 0, 'sabtu_issues': 0} for j in range(1, 31)}
+juz_stats = {j: {'juz': j, 'name': juz_surah_names[j], 'hafal_count': 0, 'tes_lancar': 0, 'tes_tidak_lancar': 0, 'sabtu_issues': 0} for j in range(1, 31)}
 
 for s in santri_rows:
     s_dict = dict(s)
     sid = s_dict['id']
     nik = str(s_dict['nik']) if s_dict.get('nik') else ''
-    tm = int(s_dict['tahun_masuk']) if s_dict.get('tahun_masuk') else 0
+    tm = int(s_dict.get('tahun_masuk') or 0)
     
     if tm == kelas1_year:
         kelas_id = "kelas_1"
@@ -249,7 +280,8 @@ for s in santri_rows:
                 'predikat': pred,
                 'penguji': a.get('penguji') or 'Penguji Tahfidz',
                 'catatan': a.get('catatan') or 'Tidak ada catatan khusus.',
-                'created_at': str(a.get('created_at', ''))[:10]
+                'created_at': str(a.get('created_at', ''))[:10],
+                'created_at_indo': format_indo_date(a.get('created_at'))
             })
             
     order_sy = ['pertama', 'kedua', 'ketiga', 'keempat', 'kelima', 'keenam']
@@ -267,7 +299,8 @@ for s in santri_rows:
                 'predikat': pred,
                 'penguji': a.get('penguji') or 'Musyrif',
                 'catatan': a.get('catatan') or '',
-                'created_at': str(a.get('created_at', ''))[:10]
+                'created_at': str(a.get('created_at', ''))[:10],
+                'created_at_indo': format_indo_date(a.get('created_at'))
             })
     juziyahs.sort(key=lambda x: sequence.index(x['juz']) if x['juz'] in sequence else 99)
     
@@ -286,7 +319,8 @@ for s in santri_rows:
                 'juz': jz,
                 'startPage': he.get('startPage', '-'),
                 'endPage': he.get('endPage', '-'),
-                'tanggal': str(sr.get('created_at', ''))[:10]
+                'tanggal': str(sr.get('created_at', ''))[:10],
+                'tanggal_indo': format_indo_date(sr.get('created_at'))
             })
             
     last_ziyadah = None
@@ -296,7 +330,8 @@ for s in santri_rows:
                 'juz': a.get('juz'),
                 'halaman': a.get('halaman'),
                 'kesalahan': a.get('kesalahan'),
-                'created_at': str(a.get('created_at', ''))[:10]
+                'created_at': str(a.get('created_at', ''))[:10],
+                'created_at_indo': format_indo_date(a.get('created_at'))
             }
             break
             
@@ -304,56 +339,68 @@ for s in santri_rows:
     if achievements:
         la = achievements[-1]
         last_achievement = {
+            'id': la['id'],
             'type': la.get('type'),
             'juz': la.get('juz'),
+            'kesalahan': la.get('kesalahan'),
             'halaman': la.get('halaman'),
-            'syahadah': la.get('syahadah'),
-            'created_at': str(la.get('created_at', ''))[:10]
+            'created_at': str(la.get('created_at', ''))[:10],
+            'created_at_indo': format_indo_date(la.get('created_at'))
         }
-        
+
+    # Grid mapping
     juz_grid = []
     for j in range(1, 31):
-        if j in test_status_map:
-            if test_status_map[j] == 'tidak_lancar':
-                code = 'tidak_lancar'
-                lbl = 'Tidak Lancar (Perlu Remidi)'
-            else:
-                cnt = test_counts[j]
-                code = 'lancar'
-                lbl = f'Lancar ({cnt}x Uji Tes)'
-        elif j in achieved_juz_list:
-            code = 'belum_tes'
-            lbl = 'Tuntas Hafal (Belum Tes 1 Juz)'
+        is_hafal = j in achieved_juz_list
+        is_lancar = j in lancar_juz_list
+        is_tl = j in tidak_lancar_tests
+        
+        if is_lancar:
+            status = 'lancar'
+            label = 'Lancar / Mutqin'
+            color = 'bg-emerald-500 text-white border-emerald-600'
+        elif is_tl:
+            status = 'tidak_lancar'
+            label = 'Belum Lancar (Perlu Remidi)'
+            color = 'bg-rose-500 text-white border-rose-600'
+        elif is_hafal:
+            status = 'hafal_belum_tes'
+            label = 'Sudah Setor (Belum Ujian Kelancaran)'
+            color = 'bg-amber-400 text-slate-900 border-amber-500'
         else:
-            code = 'belum_hafal'
-            lbl = 'Belum Dihafal'
+            status = 'belum_hafal'
+            label = 'Belum Dihafal'
+            color = 'bg-slate-100 text-slate-400 border-slate-200'
             
         juz_grid.append({
             'juz': j,
-            'status': code,
-            'label': lbl,
-            'tests': test_counts.get(j, 0),
-            'surah': juz_surah_names.get(j, '')
+            'name': juz_surah_names[j],
+            'status': status,
+            'label': label,
+            'color': color
         })
-
+        
     total_ach = len(achieved_juz_list)
     total_lan = len(lancar_juz_list)
     total_tl = len(tidak_lancar_tests)
     
-    if total_ach == 0:
-        fluency_label = "Belum Ada Setoran"
-        fluency_desc = "Belum ada riwayat hafalan tercatat."
-    elif total_lan == total_ach and total_tl == 0 and total_ach > 0:
-        fluency_label = "Sangat Lancar (Mutqin)"
-        fluency_desc = f"100% dari {total_ach} juz telah lulus tes kelancaran."
-    elif total_lan >= total_ach * 0.5:
-        fluency_label = "Mayoritas Lancar"
+    if total_lan > 0 and total_lan == total_ach and total_ach >= 5:
+        fluency_label = "Sangat Lancar (Semua Teruji Mutqin)"
+        fluency_desc = f"Seluruh {total_lan} juz yang dihafal telah teruji mutqin."
+    elif total_lan > 0 and total_lan >= (total_ach / 2):
+        fluency_label = "Lancar Sebagian Besar"
         fluency_desc = f"{total_lan} dari {total_ach} juz telah teruji lancar."
-    elif total_tl > 0 or len(sabtu_issues) > 0:
-        fluency_label = "Perlu Bimbingan Remidi"
-        fluency_desc = f"Memiliki {total_tl} juz tidak lulus tes dan {len(sabtu_issues)} catatan rapuh."
+    elif total_lan > 0:
+        fluency_label = "Sebagian Lancar"
+        fluency_desc = f"{total_lan} juz mutqin, {len(achieved_not_tested)} juz menanti tes."
+    elif total_tl > 0:
+        fluency_label = "Perlu Penguatan & Remidi"
+        fluency_desc = f"{total_tl} juz belum lulus tes kelancaran dan butuh murajaah intensif."
+    elif total_ach == 0:
+        fluency_label = "Belum Ada Setoran"
+        fluency_desc = "Belum ada riwayat setoran hafalan tercatat."
     else:
-        fluency_label = "Dalam Proses Setoran"
+        fluency_label = "Proses Penyetoran (Belum Tes)"
         fluency_desc = f"Telah mencapai {total_ach} juz, menunggu jadwal tes kelancaran."
 
     highest_sy_num = max([s_entry['tingkat_num'] for s_entry in syahadahs]) if syahadahs else 0
@@ -378,6 +425,41 @@ for s in santri_rows:
             jk = 'Perempuan'
         else:
             jk = 'Laki-laki'
+
+    # Compact raw records for dynamic client-side date filtering
+    raw_achievements = [
+        {
+            'id': a['id'],
+            'type': a.get('type') or 'ziyadah',
+            'juz': int(a['juz']) if a.get('juz') is not None else None,
+            'kesalahan': a.get('kesalahan'),
+            'halaman': a.get('halaman'),
+            'syahadah': a.get('syahadah'),
+            'penguji': a.get('penguji') or 'Penguji',
+            'catatan': a.get('catatan') or '',
+            'created_at': str(a.get('created_at', ''))[:10],
+            'created_at_indo': format_indo_date(a.get('created_at'))
+        } for a in achievements
+    ]
+
+    raw_tests = [
+        {
+            'id': t['id'],
+            'juz': int(t['juz']) if t.get('juz') is not None else None,
+            'status': t.get('status') or 'lancar',
+            'created_at': str(t.get('created_at', ''))[:10],
+            'created_at_indo': format_indo_date(t.get('created_at'))
+        } for t in tests
+    ]
+
+    raw_sabtu = [
+        {
+            'id': sr['id'],
+            'created_at': str(sr.get('created_at', ''))[:10],
+            'created_at_indo': format_indo_date(sr.get('created_at')),
+            'hafalan_tidak_lancar': sr.get('hafalan_tidak_lancar', [])
+        } for sr in sabtu_reps
+    ]
 
     all_santri.append({
         'id': sid,
@@ -419,7 +501,10 @@ for s in santri_rows:
         'last_achievement': last_achievement,
         'juz_grid': juz_grid,
         'fluency_label': fluency_label,
-        'fluency_desc': fluency_desc
+        'fluency_desc': fluency_desc,
+        'raw_achievements': raw_achievements,
+        'raw_tests': raw_tests,
+        'raw_sabtu': raw_sabtu
     })
 
 # Summary Stats for Kelas 1, 2, 3 only
@@ -489,10 +574,15 @@ for m_id, m_name in musyrif_map.items():
 dataset = {
     'metadata': {
         'generated_at': '2026-11-18 WITA',
+        'generated_at_indo': format_indo_date('2026-11-18'),
         'database_source': 'everynight-in-my-dream.db',
         'scope': 'Hanya Santri Kelas 1, 2, dan 3 (Alumni tidak dimasukkan)',
         'institution_name': 'Pesantren Tahfidzul Quran',
-        'timezone': 'Asia/Makassar (WITA)'
+        'timezone': 'Asia/Makassar (WITA)',
+        'min_date': min_date,
+        'max_date': max_date,
+        'min_date_indo': format_indo_date(min_date),
+        'max_date_indo': format_indo_date(max_date)
     },
     'summary': {
         'total_santri': total_students,
@@ -520,4 +610,4 @@ dataset = {
 with open('full_report_dataset.json', 'w', encoding='utf-8') as f:
     json.dump(dataset, f, ensure_ascii=False, indent=2)
 
-print(f"Dataset successfully created for Classes 1, 2, 3 only: {total_students} santri, {syahadah_holders} lulus syahadah, {total_juz_memorized} juz dihafal, {total_juz_fluent} juz lancar.")
+print(f"Dataset successfully created for Classes 1, 2, 3 only: {total_students} santri, {syahadah_holders} lulus syahadah. Date bounds: {min_date} ({format_indo_date(min_date)}) to {max_date} ({format_indo_date(max_date)}).")
