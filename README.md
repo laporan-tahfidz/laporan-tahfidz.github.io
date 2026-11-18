@@ -110,13 +110,20 @@ File `index.html` bersifat **mandiri (*single standalone HTML*)**:
 
 ---
 
-## 🛠️ Cara Memperbarui / Regenerasi Data
+## 🛠️ Cara Memperbarui / Regenerasi Data & Arsitektur File
 
-Jika ada pembaruan data di database SQLite `everynight-in-my-dream.db`:
+Aplikasi ini menggunakan arsitektur modular yang rapi:
+- `style.css`: File styling kustom.
+- `app.js`: File logika aplikasi interaktif frontend.
+- `AGENTS.md`: Pedoman baku AI mengenai aturan cache busting ULID, konvensi format data, dan batasan skop.
+- `build_index_html.py`: Skrip otomasi build.
+
+Jika ada pembaruan data di database SQLite `everynight-in-my-dream.db` atau pembaruan kode:
 ```bash
 python build_index_html.py
 ```
 Skrip ini akan secara otomatis:
 1. Membaca data terbaru untuk santri Kelas 1, 2, dan 3 (`process_classes_123.py`) tanpa menyertakan evaluasi Sabtu.
 2. Menghasilkan dataset terstruktur `full_report_dataset.json` lengkap dengan tanggal bahasa Indonesia dan rekaman aktivitas mentah.
-3. Memperbarui `index.html`.
+3. Menghasilkan hash ULID (*Universally Unique Lexicographically Sortable Identifier*) baru untuk `style.css` dan `app.js`.
+4. Memperbarui `index.html` dengan query parameter ULID untuk pencegahan stale cache (`style.css?<ulid>` dan `app.js?<ulid>`).
