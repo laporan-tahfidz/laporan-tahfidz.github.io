@@ -1,74 +1,105 @@
-# Laporan & Evaluasi Capaian Tahfidz Santri
+# Laporan & Evaluasi Capaian Tahfidz Santri (Kelas 1, 2, & 3)
 
-Aplikasi dashboard eksekutif dan laporan komprehensif pencapaian tahfidz santri berbasis data SQLite (`everynight-in-my-dream.db`). Dirancang agar mudah dipahami oleh siapa saja, mulai dari pimpinan pesantren, asatidzah/musyrif, orang tua / wali santri, hingga masyarakat umum.
+Aplikasi dashboard eksekutif dan laporan interaktif pencapaian tahfidz santri berbasis data SQLite (`everynight-in-my-dream.db`). Dirancang khusus agar **mudah dipahami oleh orang awam dan wali santri**, memiliki **tampilan terang (Light Mode)** yang bersih dan elegan, serta **sangat optimal dibuka di layar ponsel pintar (HP/Smartphone)** maupun desktop.
 
----
-
-## 🌟 Fitur Utama
-
-1. **Ringkasan Eksekutif (Dashboard KPI)**:
-   - 6 Metrik Kunci: Total Santri (115 total, 97 aktif), Total Lulus Syahadah (26 santri, 29 sertifikat), Akumulasi Juz Dihafal (540 juz), Juz Teruji Mutqin/Lancar (96 juz), Total Catatan Ziyadah & Ujian (4.228 riwayat), dan Laporan Evaluasi Sabtu (364 catatan).
-   - Penjelasan awam ramah wali santri ("Bagaimana cara membaca laporan ini?").
-   - 4 Visual Chart interaktif: Komparasi antar kelas, Proporsi Syahadah, Rasio Kelancaran, dan Top Performers.
-
-2. **Laporan Syahadah (Ujian Akbar 5-Juz Mutqin)**:
-   - Rincian 26 Santri pemegang Syahadah (Syahadah 1 [5 Juz], Syahadah 2 [10 Juz], Syahadah 3 [15 Juz], Syahadah 4 [20 Juz]).
-   - Predikat nilai resmi pesantren: Mumtaz (0-10 salah), Jayyid Jiddan (11-20 salah), Jayyid (21-30 salah), Maqbul (31-40 salah), Mardud (>40 salah).
-   - Catatan evaluasi langsung dari penguji tahfidz.
-   - **Analisis Siapa yang Belum Syahadah**:
-     - Kelompok Siap Ujian (20 santri yang sudah hafal &ge;5 juz namun belum mengambil ujian resmi).
-     - Kelompok Sedang Berproses (17 santri yang sudah hafal 1-4 juz).
-     - Distribusi per jenjang kelas.
-
-3. **Status Kelancaran (Mutqin vs Perlu Murajaah)**:
-   - Siapa saja santri paling lancar (Top Mutqin).
-   - Siapa saja santri yang membutuhkan penguatan/remidi (gagal tes kelancaran atau catatan rapuh di evaluasi Sabtu).
-   - Peta analisis kendala pada 30 Juz Al-Quran (Juz 1, 2, 29, 3, 30 paling sering mengalami kebuntuan) beserta penjelasan metodologis penyebab kesulitannya.
-
-4. **Grouping Berdasarkan Kelas & Halaqah**:
-   - **Per Jenjang Kelas**: Kelas 1 (Ula), Kelas 2 (Wustho), Kelas 3 (Ulya), Angkatan 2023 (Senior), dan Alumni (2020-2022).
-   - **Per Halaqah Musyrif**: 6 Halaqah aktif (Ulya Ikhwan, Ula Ikhwan, Whusto Ikhwan, Ulya Akhwat, Wustho Akhwat, Ula Akhwat).
-   - Metrik per kelompok: total santri, rasio aktif, rata-rata juz dicapai, rata-rata juz lancar, persentase kelulusan syahadah.
-
-5. **Direktori & Profil Santri Interaktif (Rapor 30 Juz)**:
-   - Pencarian real-time (Nama, NIS, NIK).
-   - Multi-filter: Kelas, Halaqah, Status Syahadah, Kelancaran.
-   - Sorting tabel pada seluruh kolom.
-   - **Modal Interaktif 30 Juz Visual Grid**:
-     - Peta 30 kotak juz dengan kode warna (Hijau = Lancar, Kuning = Sudah hafal belum tes, Merah = Perlu remidi, Abu-abu = Belum mulai).
-     - Riwayat ujian Syahadah, ujian Juziyah, dan catatan evaluasi Sabtu.
-     - Rekomendasi musyrif personal untuk santri dan wali santri.
-
-6. **Panduan Awam & Glosarium Tahfidz**:
-   - Bagan alur tahapan belajar (Ziyadah &rarr; Setengah Juz &rarr; Juziyah &rarr; Ujian Kelancaran &rarr; Syahadah).
-   - Arti istilah: Ziyadah, Murajaah, Mutqin, Syahadah, dan urutan hafalan khas pesantren (30, 29, 1 s.d. 28).
-   - Standar nilai predikat pesantren (Mumtaz s.d. Mardud).
-   - Pesan dan tips pendampingan untuk ayah/bunda wali santri di rumah.
-
-7. **Fitur Tambahan**:
-   - Mode Gelap / Terang (Dark / Light Mode Toggle).
-   - Ekspor data santri ke format CSV.
-   - Tampilan ramah cetak (`window.print()` / Simpan PDF).
-   - Bekerja 100% mandiri (*single standalone HTML*), dapat dibuka langsung di browser mana pun tanpa butuh web server.
+> [!NOTE]
+> **Cakupan Data**: Laporan ini secara ketat **hanya menampilkan data santri Kelas 1, Kelas 2, dan Kelas 3 (Total 44 santri)**. Angkatan senior terdahulu (2020–2023) dan alumni tidak disertakan.
 
 ---
 
-## 🚀 Cara Menjalankan
+## 🌟 Fitur Unggulan
 
-Cukup buka file `index.html` langsung di browser favorit Anda (Google Chrome, Microsoft Edge, Mozilla Firefox, dll.) dengan klik ganda (*double click*).
+### 1. 📱 Desain Mobile-First & Strictly Light Mode
+- **Khusus Light Mode**: Menggunakan palet warna hijau zamrud (*emerald*) dan abu-abu lembut (*slate*) yang sejuk di mata, tanpa mode gelap.
+- **Tampilan Ponsel Pintar (HP)**:
+  - Mengubah tabel panjang menjadi kartu santri (*card view*) yang ringkas dan ramah sentuhan jempol saat dibuka di HP.
+  - *Bottom Sheet Modal* untuk melihat rapor 30 juz santri secara penuh.
+  - Tab navigasi geser horizontal (*horizontal swipeable tabs*) yang praktis di layar sempit.
+  - Tombol-tombol dengan ukuran target sentuh (*touch target*) minimal 44px.
 
-Jika ingin menjalankan melalui local server:
-```bash
-python -m http.server 8000
-```
-Lalu buka `http://localhost:8000` di browser.
+### 2. 📊 Ringkasan Eksekutif (Dashboard KPI)
+- **6 Indikator Kunci**:
+  1. **Total Santri Terdaftar**: 44 santri (42 aktif, 2 non-aktif).
+  2. **Kelulusan Syahadah**: 19 santri (22 sertifikat kelulusan).
+  3. **Total Juz Hafal**: 334 juz terakumulasi.
+  4. **Total Juz Mutqin / Lancar**: 96 juz telah teruji lancar.
+  5. **Total Riwayat Evaluasi**: 3.449 catatan capaian ziyadah & 221 ujian juziyah.
+  6. **Laporan Evaluasi Musyrif**: 226 lembar evaluasi pekanan.
+- **Grafik Interaktif (Chart.js)**:
+  - Komparasi Capaian per Jenjang Kelas (Ula, Wustho, Ulya).
+  - Proporsi Kelulusan Syahadah.
+  - Rasio Hafalan Lancar vs Belum Ujian Kelancaran.
+  - 10 Santri dengan Capaian Hafalan Terbanyak.
+
+### 3. 📜 Laporan Khusus Syahadah (Ujian Akbar 5-Juz Sekali Duduk)
+- **Daftar Lulusan Syahadah**:
+  - Daftar 19 santri peraih Syahadah 1 (5 Juz), Syahadah 2 (10 Juz), Syahadah 3 (15 Juz), hingga Syahadah 4 (20 Juz).
+  - Rincian predikat resmi: **Mumtaz** (0-10 kesalahan), **Jayyid Jiddan** (11-20 kesalahan), **Jayyid** (21-30 kesalahan).
+  - Catatan resmi langsung dari penguji tahfidz.
+- **Analisis Siapa yang Belum Syahadah**:
+  - **Kelompok Siap Ujian (9 santri)**: Santri yang hafalannya sudah mencapai &ge;5 juz namun belum mengambil ujian Syahadah resmi.
+  - **Kelompok Sedang Berproses (15 santri)**: Santri yang sedang berproses menghafal 1–4 juz awal.
+  - **Kelompok Belum Mulai (1 santri)**: Santri non-aktif.
+
+### 4. 🎯 Analisis Kelancaran & Peta Hambatan 30 Juz
+- **Daftar Santri Paling Lancar (Top Mutqin)**.
+- **Daftar Santri Butuh Penguatan (Perlu Murajaah / Remidi)**.
+- **Peta Kendala 30 Juz**: Menganalisis juz mana saja yang paling menantang bagi santri (Juz 1, 2, 29, 3) disertai panduan cara mengatasinya.
+
+### 5. 👥 Pengelompokan Kelas & Halaqah
+- **Berdasarkan Jenjang Kelas**:
+  - **Kelas 1 (Ula)**: Angkatan 2026 (11 santri, rata-rata 3,0 juz).
+  - **Kelas 2 (Wustho)**: Angkatan 2025 (16 santri, rata-rata 6,3 juz, 8 peraih Syahadah).
+  - **Kelas 3 (Ulya)**: Angkatan 2024 (17 santri, rata-rata 11,8 juz, 11 peraih Syahadah).
+- **Berdasarkan Halaqah Musyrif**:
+  - Mengelompokkan santri ke dalam 6 kelompok halaqah bimbingan musyrif (Ulya Ikhwan, Ula Ikhwan, Wustho Ikhwan, Ulya Akhwat, Wustho Akhwat, Ula Akhwat).
+
+### 6. 🔍 Direktori & Rapor Santri Interaktif (Peta Visual 30 Juz)
+- Pencarian instan berdasarkan nama atau NIS.
+- Filter multi-dimensi (Kelas, Halaqah, Status Syahadah).
+- Klik nama santri untuk membuka **Rapor 30 Juz Visual**:
+  - Peta kisi warna-warni 30 Juz (Hijau = Lancar/Mutqin, Kuning = Selesai setor belum tes, Merah = Butuh remidi, Abu-abu = Belum mulai).
+  - Riwayat ujian dan skor kesalahan.
+  - Catatan evaluasi pekanan dan saran bimbingan musyrif untuk wali santri di rumah.
+
+### 7. 📖 Panduan Awam & Glosarium
+- Penjelasan sederhana mengenai alur menghafal (Ziyadah &rarr; Setengah Juz &rarr; Juziyah &rarr; Tes Kelancaran &rarr; Syahadah 5-Juz Sekali Duduk).
+- Mengapa urutan hafalan dimulai dari Juz 30 & 29 baru ke Juz 1 s.d. 28.
+- Kriteria nilai (Mumtaz, Jayyid Jiddan, Jayyid, Maqbul, Mardud).
+- Tips praktis pendampingan orang tua di rumah.
 
 ---
 
-## 🛠️ Regenerasi Data
+## 🚀 Cara Membuka & Menggunakan
 
-Jika database `everynight-in-my-dream.db` mengalami pembaruan, jalankan perintah:
+File `index.html` dibuat bersifat **mandiri (*single standalone HTML*)**. Anda tidak membutuhkan web server khusus:
+
+1. **Buka di Komputer / Laptop**:
+   Cukup klik ganda (*double click*) file [index.html](index.html) untuk langsung membukanya di peramban favorit Anda (Google Chrome, Microsoft Edge, Mozilla Firefox, Safari, dll.).
+
+2. **Buka di Ponsel Pintar (HP)**:
+   - Kirimkan file `index.html` ke ponsel melalui WhatsApp / Telegram / Google Drive lalu buka menggunakan peramban HP.
+   - Atau buka melalui GitHub Pages / local server.
+
+3. **Menjalankan via Local Server (Opsional)**:
+   ```bash
+   python -m http.server 8000
+   ```
+   Lalu buka `http://localhost:8000` di browser.
+
+4. **Ekspor Data & Cetak**:
+   - Terdapat tombol **"Ekspor CSV"** untuk mengunduh rekap tabel santri ke Excel/Spreadsheet.
+   - Terdapat tombol **"Cetak / PDF"** yang sudah diformat khusus tanpa tombol/elemen antarmuka yang mengganggu.
+
+---
+
+## 🛠️ Cara Memperbarui / Regenerasi Data
+
+Jika ada penambahan data baru di `everynight-in-my-dream.db`:
 ```bash
 python build_index_html.py
 ```
-Perintah ini akan membaca ulang database SQLite, menyusun kembali ringkasan statistik, dan memperbarui `index.html`.
+Skrip ini akan secara otomatis:
+1. Memproses ulang data SQLite santri Kelas 1, 2, dan 3 (`process_classes_123.py`).
+2. Menghasilkan dataset terstruktur `full_report_dataset.json`.
+3. Memperbarui tampilan `index.html`.
