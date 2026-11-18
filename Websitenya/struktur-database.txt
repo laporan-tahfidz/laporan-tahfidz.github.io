@@ -1,0 +1,235 @@
+# Struktur Database
+
+## Tabel-tabel yang ada:
+
+### idempotency
+- id: integer (primary key, auto increment)
+- key: string - kunci idempotensi unik untuk mencegah duplikasi permintaan
+- response: text - respons JSON yang disimpan dari permintaan sebelumnya
+- method: string - metode HTTP dari permintaan asli
+- request_data: text - data JSON dari permintaan asli
+- created_at: datetime - timestamp kapan data dibuat
+- updated_at: datetime - timestamp kapan data terakhir diubah
+
+Catatan: Tabel ini digunakan untuk menyimpan data idempotensi untuk mencegah proses duplikat dari permintaan yang sama.
+
+### otp
+- id: integer (primary key, auto increment)
+- phone: string - nomor telepon dalam format internasional (misal: +6281234567890)
+- code: string - kode OTP (6 digit)
+- expires_at: integer - timestamp kapan OTP kadaluarsa
+- created_at: integer - timestamp kapan OTP dibuat
+
+Catatan: Tabel ini dibuat otomatis oleh RedBeanPHP saat menyimpan bean pertama kali dengan tipe 'otp'.
+
+### token
+- id: integer (primary key, auto increment)
+- token_hash: string - hash dari token (menggunakan SHA256)
+- phone: string - nomor telepon yang terkait dengan token
+- created_at: integer - timestamp kapan token dibuat
+- expires_at: integer - timestamp kapan token kadaluarsa (24 jam setelah dibuat)
+
+Catatan: Tabel ini dibuat otomatis oleh RedBeanPHP saat menyimpan bean pertama kali dengan tipe 'token'.
+
+### santri
+- id: integer (primary key, auto increment)
+- external_id: string - ID dari sistem eksternal
+- tahun_masuk: string - tahun masuk santri
+- nama_sesuai_kk: string - nama lengkap sesuai KK
+- status: string - status aktif/tidak aktif
+- nama_panggilan: string - nama panggilan santri
+- no_kk: string - nomor kartu keluarga
+- nik: string - nomor induk kependudukan
+- nis: string - nomor induk siswa
+- nisn: string - nomor induk siswa nasional
+- asal_sekolah: string - asal sekolah sebelum masuk pondok
+- alamat_sekolah: string - alamat sekolah sebelum masuk pondok
+- tempat_lahir: string - tempat lahir santri
+- tanggal_lahir: string - tanggal lahir santri
+- jenis_kelamin: string - jenis kelamin santri
+- anak_ke: string - urutan anak ke-
+- jumlah_saudara: string - jumlah saudara kandung
+- status_anak: string - status anak (kandung, angkat, dll)
+- tinggi_badan: string - tinggi badan santri
+- berat_badan: string - berat badan santri
+- alamat_sesuai_kk: string - alamat sesuai kartu keluarga
+- alamat_sekarang: string - alamat tempat tinggal sekarang
+- gol_darah: string - golongan darah santri
+- penyakit_diderita: string - riwayat penyakit yang diderita
+- cacat_fisik: string - cacat fisik yang dimiliki
+- alergi: string - alergi yang dimiliki
+- imunisasi: string - riwayat imunisasi
+- nama_ayah: string - nama ayah kandung
+- wa_ayah: string - nomor WhatsApp ayah
+- nama_ibu: string - nama ibu kandung
+- wa_ibu: string - nomor WhatsApp ibu
+- pekerjaan_ayah: string - pekerjaan ayah
+- pekerjaan_ibu: string - pekerjaan ibu
+- created_at: datetime - timestamp kapan data dibuat
+- updated_at: datetime - timestamp kapan data terakhir diubah
+
+Catatan: Tabel ini digunakan untuk menyimpan data santri yang diambil dari sistem eksternal.
+
+### musyrif
+- id: integer (primary key, auto increment)
+- nama: string - nama lengkap musyrif
+- created_at: datetime - timestamp kapan data dibuat
+- updated_at: datetime - timestamp kapan data terakhir diubah
+
+Catatan: Tabel ini digunakan untuk menyimpan data musyrif.
+
+### musyrfst
+- id: integer (primary key, auto increment)
+- musyrif_id: integer - ID musyrif
+- santri_nik: string - NIK santri (sebagai identifier tetap)
+- created_at: datetime - timestamp kapan data dibuat
+- updated_at: datetime - timestamp kapan data terakhir diubah
+
+Catatan: Tabel ini digunakan untuk menyimpan relasi antara musyrif dan santri (many-to-many), dengan NIK sebagai identifier tetap.
+
+### Query untuk mendapatkan musyrif beserta jumlah santri yang ditugaskan
+Berikut adalah query yang digunakan untuk mendapatkan data musyrif beserta jumlah santri yang ditugaskan:
+
+```sql
+SELECT m.id, m.nama, m.created_at, m.updated_at,
+       COUNT(ms.santri_nik) as assigned_students_count
+FROM musyrif m
+LEFT JOIN musyrfst ms ON m.id = ms.musyrif_id
+GROUP BY m.id, m.nama, m.created_at, m.updated_at
+ORDER BY m.nama ASC
+```
+
+Query ini menggunakan LEFT JOIN agar semua musyrif ditampilkan meskipun tidak memiliki santri yang ditugaskan.
+
+### pencapaian
+- id: integer (primary key, auto increment)
+- type: string - jenis pencapaian ('ziyadah', 'setengah_juz', 'juziyah', 'syahadah')
+- juz: integer - nomor juz
+- halaman: string - nomor halaman (untuk ziyadah)
+- posisi: string - posisi (awal/akhir untuk setengah juz)
+- syahadah: string - tingkatan syahadah (pertama, kedua, dst)
+- kesalahan: integer - jumlah kesalahan
+- catatan: string - catatan tambahan
+- santri_id: integer - ID santri
+- nik: string - NIK santri
+- created_at: datetime - timestamp kapan data dibuat
+- updated_at: datetime - timestamp kapan data terakhir diubah
+
+Catatan: Tabel ini digunakan untuk menyimpan pencapaian santri dalam setoran hafalan.
+
+### tes
+- id: integer (primary key, auto increment)
+- juz: integer - nomor juz yang diujikan
+- santri_id: integer - ID santri
+- nik: string - NIK santri
+- created_at: datetime - timestamp kapan data dibuat
+- updated_at: datetime - timestamp kapan data terakhir diubah
+
+Catatan: Tabel ini digunakan untuk menyimpan data tes santri.
+
+### settings
+- id: integer (primary key, auto increment)
+- key: string - kunci pengaturan (unik)
+- value: string - nilai pengaturan
+- created_at: datetime - timestamp kapan data dibuat
+- updated_at: datetime - timestamp kapan data terakhir diubah
+
+Catatan: Tabel ini digunakan untuk menyimpan pengaturan aplikasi seperti ID grup WhatsApp yang dipilih.
+
+### laporansabtu
+- id: integer (primary key, auto increment)
+- murajaahentries: text - entri-entri murajaah dalam format JSON
+- hafalanentries: text - entri-entri hafalan tidak lancar dalam format JSON
+- santri_id: integer - ID santri yang bersangkutan
+- nik: string - NIK santri yang bersangkutan
+- created_at: datetime - timestamp kapan data dibuat
+
+Catatan: Tabel ini digunakan untuk menyimpan laporan Sabtu yang mencakup Murajaah dan Hafalan Tidak Lancar.
+
+### Endpoint API Baru
+
+#### get-attention-needed-students.php
+Endpoint ini digunakan untuk mendapatkan daftar santri yang perlu perhatian khusus baik dari koordinator tahfidz maupun musyrif, dikelompokkan berdasarkan musyrifnya masing-masing.
+
+Parameter:
+- token: string - token autentikasi super admin
+
+Respons:
+- success: boolean - status keberhasilan permintaan
+- coordinator_attention: array - daftar santri yang perlu perhatian koordinator tahfidz, dikelompokkan berdasarkan musyrif
+- musyrif_attention: array - daftar santri yang perlu perhatian musyrif, dikelompokkan berdasarkan musyrif
+
+Setiap elemen dalam array berisi:
+- musyrif_nama: string - nama musyrif
+- students: array - daftar santri yang ditugaskan ke musyrif tersebut
+  - id: integer - ID santri
+  - nama: string - nama santri
+  - keterangan: string - keterangan jenis persiapan (Persiapan Setengah Juz, Persiapan Juziyah, atau Persiapan Syahadah, atau keterangan tentang ziyadah yang belum terpenuhi)
+  - lama_persiapan: string - durasi waktu sejak pencapaian terakhir (dalam format "X hari" atau "X bulan Y hari")
+  - musyrif_nama: string - nama musyrif
+  - musyrif_id: integer - ID musyrif
+
+Catatan: Endpoint ini mencakup kriteria untuk menentukan apakah seorang santri perlu perhatian koordinator tahfidz maupun musyrif:
+- Kriteria Perlu Perhatian Koordinator Tahfidz:
+  1. Persiapan Setengah juz sudah 11 hari: Pencapaian terakhir adalah ziyadah di halaman 5B maupun 10B dan tanggalnya adalah 11 hari yang lalu atau lebih
+  2. Persiapan Juziyah sudah 22 hari: Pencapaian terakhir adalah setengah juz yang kedua dan tanggalnya adalah 22 hari yang lalu atau lebih
+  3. Persiapan Syahadah sudah 52 hari: Pencapaian terakhir adalah juziyah pada juz 3, 8, 13, 18, 23, atau 28 dan tanggalnya adalah 52 hari yang lalu atau lebih
+  4. Belum Ziyadah minimal 1 halaman per 2 hari (dihitung dari Senin): Jika sudah 3 hari atau lebih (Rabu ke atas) belum mencapai target ziyadah (0.5 halaman per hari)
+- Kriteria Perlu Perhatian Musyrif:
+  1. Persiapan Setengah juz sudah 4 hari: Pencapaian terakhir adalah ziyadah di halaman 5B maupun 10B dan tanggalnya adalah 4 hari yang lalu atau lebih (dan kurang dari 11 hari)
+  2. Persiapan Juziyah sudah 8 hari: Pencapaian terakhir adalah setengah juz yang kedua dan tanggalnya adalah 8 hari yang lalu atau lebih (dan kurang dari 22 hari)
+  3. Persiapan Syahadah sudah 31 hari: Pencapaian terakhir adalah juziyah pada juz 3, 8, 13, 18, 23, atau 28 dan tanggalnya adalah 31 hari yang lalu atau lebih (dan kurang dari 52 hari)
+  4. Target ziyadah harian tidak tercapai: Dihitung dari hari Senin sampai hari ini, dengan target 0.5 halaman per hari (pada hari Senin/Selasa sebelum masuk ke kriteria koordinator). Jika ada pencapaian Setengah Juz, Juziyah, atau Syahadah di tengah minggu, maka target dihitung dari hari setelah pencapaian tersebut hingga hari ini, dengan target 0.5 halaman per hari
+- Total halaman ziyadah dihitung berdasarkan urutan hafalan (1A, 1B, 2A, 2B, ..., 10B) dan hanya menghitung halaman unik yang dicapai selama periode yang relevan
+- Santri yang memenuhi kriteria koordinator akan dimasukkan ke dalam daftar perlu perhatian koordinator tahfidz
+- Santri yang memenuhi kriteria musyrif (dan tidak termasuk dalam kriteria koordinator) akan dimasukkan ke dalam daftar perlu perhatian musyrif
+
+#### grup.php
+Endpoint ini digunakan untuk mengirimkan daftar santri yang wajib mengikuti karantina tahfidz ke grup WhatsApp.
+
+Parameter:
+- action: string - tindakan yang ingin dilakukan ('send_attention_message' atau kosong untuk cron job, 'get_selected_group', 'set_selected_group')
+
+Respons:
+- success: boolean - status keberhasilan permintaan
+- message: string - status pengiriman pesan
+- sent_message: string - pesan yang dikirimkan ke grup WhatsApp
+
+Catatan Aturan Karantina Tahfidz:
+- Periode Evaluasi Target Ziyadah:
+  - Dijalankan pada hari Selasa: evaluasi pencapaian hari Senin dan Selasa, target minimal 1 halaman.
+  - Dijalankan pada hari Kamis: evaluasi pencapaian hari Rabu dan Kamis, target minimal 1 halaman.
+  - Dijalankan pada hari Sabtu: evaluasi pencapaian hari Jumat dan Sabtu, target minimal 1 halaman.
+- Pengecualian Ujian pada Target Ziyadah:
+  - Jika santri menyelesaikan Setengah Juz, Juziyah, atau Syahadah pada hari H skrip dijalankan (misal hari Selasa), maka TIDAK ADA target minimal ziyadah 1 halaman (target = 0).
+  - Jika santri menyelesaikan Setengah Juz, Juziyah, atau Syahadah pada hari pertama periode (misal hari Senin saat dijalankan Selasa), maka target hari Selasa TETAP minimal 1 halaman.
+- Batas Maksimal Masa Persiapan Ujian:
+  - Persiapan Setengah Juz: batas maksimal 3 hari (hari ke-4 wajib karantina Musyrif, hari ke-11 Koordinator).
+  - Persiapan Juziyah: batas maksimal 7 hari (hari ke-8 wajib karantina Musyrif, hari ke-22 Koordinator).
+  - Persiapan Syahadah: batas maksimal 30 hari (hari ke-31 wajib karantina Musyrif, hari ke-52 Koordinator).
+  - Jika masih dalam batas waktu belum mencapai maksimal persiapan, maka TIDAK mengikuti karantina tahfidz.
+
+### webhooksyahadah
+- id: integer (primary key, auto increment)
+- id_guru: integer - ID guru penguji dari API external
+- nik_santri: string - NIK santri
+- tanggal: datetime - tanggal & waktu penyimpanan (Asia/Makassar)
+- id_tahfidz: integer - ID pencapaian syahadah di tabel pencapaian
+- nama_santri: string - nama lengkap santri
+- syahadah_ke: integer - syahadah ke (1, 2, 3, 4, 5, atau 6)
+- nilai: string - Mumtaz (0-10), Jayyid Jiddan (11-20), Jayyid (21-30), Maqbul (31-40), Mardud (41+)
+- tahun_masuk: string - tahun masuk santri
+- kirim_ke_web_utama: boolean - status pengiriman ke web utama
+- kirim_ke_web_surat: boolean - status pengiriman ke web surat
+
+### webhookjuziyah
+- id: integer (primary key, auto increment)
+- id_guru: integer - ID guru musyrif halaqah / penguji
+- nik_santri: string - NIK santri
+- tanggal: datetime - tanggal & waktu penyimpanan (Asia/Makassar)
+- id_tahfidz: integer - ID pencapaian juziyah di tabel pencapaian
+- nama_santri: string - nama lengkap santri
+- juz: integer / string - juz yang diujikan
+- nilai: string - Mumtaz (0-5), Jayyid Jiddan (6-10), Jayyid (11-15), Maqbul (16-20), Mardud (21+)
+- tahun_masuk: string - tahun masuk santri
+- kirim_ke_web_surat: boolean - status pengiriman ke web surat

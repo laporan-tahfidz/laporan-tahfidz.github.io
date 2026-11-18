@@ -1,0 +1,1 @@
+php -S localhost:4848 -t static

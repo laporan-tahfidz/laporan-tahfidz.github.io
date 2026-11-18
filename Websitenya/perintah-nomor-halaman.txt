@@ -1,0 +1,103 @@
+Pada ./nomor-halaman.txt itu diisi seperti ini:
+
+Juz 1, halaman 1A, surat Al-Baqarah, ayat 
+Juz 1, halaman 1B, surat Al-Baqarah, ayat 
+Juz 1, halaman 2A, surat Al-Baqarah, ayat 
+Juz 1, halaman 2B, surat Al-Baqarah, ayat 
+
+Kan ada 30 juz di Quran ya. Di setiap juznya itu halamannya adalah 1A, 1B, 2A, 2B, 3A, 3B, 4A, 4B, 5A, 5B, 6A, 6B, 7A, 7B, 8A, 8B, 9A, 9B, 10A, 10B
+
+Surat Al-Baqarah itu untuk juz 1 halaman 1A sampai juz 3 halaman 4B
+Surat Ali Imran itu untuk juz 3 halaman 5A sampai juz 4 halaman 8A
+Surat An-Nisa itu untuk juz 4 halaman 8B sampai juz 6 halaman 2B
+Surat Al-Maidah itu untuk juz 6 halaman 3A sampai juz 7 halaman 3B
+Surat Al-An'am itu untuk juz 7 halaman 4A sampai juz 8 halaman 5A
+Surat Al-A'raaf itu untuk juz 8 halaman 5B sampai juz 9 halaman 8A
+Surat Al-Anfal itu untuk juz 9 halaman 8B sampai juz 10 halaman 3A
+Surat At-Taubah itu untuk juz 10 halaman 3B sampai juz 11 halaman 3B
+Surat Yunus itu untuk juz 11 halaman 4A sampai juz 11 halaman 10A
+Surat Hud itu untuk juz 11 halaman 10B sampai juz 12 halaman 7A
+Surat Yusuf itu untuk juz 12 halaman 7B sampai juz 13 halaman 4A
+Surat Ar-Ra'd itu untuk juz 13 halaman 4B sampai juz 13 halaman 7A
+Surat Ibrahim itu untuk juz 13 halaman 7B sampai juz 13 halaman 10B
+Surat Al-Hijr itu untuk juz 14 halaman 1A sampai juz 14 halaman 3A
+Surat An-Nahl itu untuk juz 14 halaman 3B sampai juz 14 halaman 10B
+Surat Al-Isra itu untuk juz 15 halaman 1A sampai juz 15 halaman 6A
+Surat Al-Kahfi itu untuk juz 15 halaman 6B sampai juz 16 halaman 2A
+Surat Maryam itu untuk juz 16 halaman 2B sampai juz 16 halaman 5B
+Surat Taha itu untuk juz 16 halaman 6A sampai juz 16 halaman 10B
+Surat Al-Anbiya itu untuk juz 17 halaman 1A sampai juz 17 halaman 5B
+Surat Al-Hajj itu untuk juz 17 halaman 6A sampai juz 17 halaman 10B
+Surat Al-Mu'minun itu untuk juz 18 halaman 1A sampai juz 18 halaman 4B
+Surat An-Nur itu untuk juz 18 halaman 5A sampai juz 18 halaman 9A
+Surat Al-Furqan itu untuk juz 18 halaman 9B sampai juz 19 halaman 3A
+Surat Asy-Syuara itu untuk juz 19 halaman 3B sampai juz 19 halaman 8A
+Surat An-Naml itu untuk juz 19 halaman 8B sampai juz 20 halaman 2A
+Surat Al-Qasas itu untuk juz 20 halaman 2B sampai juz 20 halaman 7B
+Surat Al-Ankabut itu untuk juz 20 halaman 8A sampai juz 21 halaman 1B
+Surat Ar-Rum itu untuk juz 21 halaman 2A sampai juz 21 halaman 5A
+Surat Luqman itu untuk juz 21 halaman 5B sampai juz 21 halaman 7A
+Surat As-Sajdah itu untuk juz 21 halaman 7B sampai juz 21 halaman 8B
+Surat Al-Ahzab itu untuk juz 21 halaman 9A sampai juz 22 halaman 3B
+Surat Saba itu untuk juz 22 halaman 4A sampai juz 22 halaman 6B
+Surat Fatir itu untuk juz 22 halaman 7A sampai juz 22 halaman 9B
+Surat Yasin itu untuk juz 22 halaman 10A sampai juz 23 halaman 2B
+Surat As-Shafat itu untuk juz 23 halaman 3A sampai juz 23 halaman 6A
+Surat Sad itu untuk juz 23 halaman 6B sampai juz 23 halaman 8B
+Surat Az-Zumar itu untuk juz 23 halaman 9A sampai juz 24 halaman 3A
+Surat Gafir itu untuk juz 24 halaman 3B sampai juz 24 halaman 8A
+Surat Fussilat itu untuk juz 24 halaman 8B sampai juz 25 halaman 1A
+Surat Asy-Syura itu untuk juz 25 halaman 1B sampai juz 25 halaman 4A
+Surat Az-Zukhruf itu untuk juz 25 halaman 4B sampai juz 25 halaman 7B
+Surat Ad-Dukhan itu untuk juz 25 halaman 8A sampai juz 25 halaman 9A
+Surat Al-Jatsiyah itu untuk juz 25 halaman 9B sampai juz 25 halaman 10B
+Surat Al-Ahqaf itu untuk juz 26 halaman 1A sampai juz 26 halaman 3A
+Surat Muhammad itu untuk juz 26 halaman 3B sampai juz 26 halaman 5A
+Surat Al-Fath itu untuk juz 26 halaman 5B sampai juz 26 halaman 7A
+Surat Al-Hujurat itu untuk juz 26 halaman 7B sampai juz 26 halaman 8B
+Surat Qaf itu untuk juz 26 halaman 9A sampai juz 26 halaman 9B
+Surat Adz-Dzariyat itu untuk juz 26 halaman 10A sampai juz 27 halaman 1A
+Surat At-Tur itu untuk juz 27 halaman 1B sampai juz 27 halaman 2B
+Surat An-Najm itu untuk juz 27 halaman 3A sampai juz 27 halaman 3B
+Surat Al-Qamar itu untuk juz 27 halaman 4A sampai juz 27 halaman 5A
+Surat Ar-Rahman itu untuk juz 27 halaman 5B sampai juz 27 halaman 6B
+Surat Al-Waqiah itu untuk juz 27 halaman 7A sampai juz 27 halaman 8A
+Surat Al-Hadid itu untuk juz 27 halaman 8B sampai juz 27 halaman 10B
+Surat Al-Mujadalah itu untuk juz 28 halaman 1A sampai juz 28 halaman 2A
+Surat Al-Hasyr itu untuk juz 28 halaman 2B sampai juz 28 halaman 4A
+Surat Al-Mumtahanah itu untuk juz 28 halaman 4B sampai juz 28 halaman 5A
+Surat As-Saf itu untuk juz 28 halaman 5B sampai juz 28 halaman 6A
+Surat Al-Jumuah itu untuk juz 28 halaman 6B sampai juz 28 halaman 6B
+Surat Al-Munafiqun itu untuk juz 28 halaman 7A sampai juz 28 halaman 7B
+Surat At-Tagabun itu untuk juz 28 halaman 8A sampai juz 28 halaman 8B
+Surat At-Talaq itu untuk juz 28 halaman 9A sampai juz 28 halaman 9B
+Surat At-Tahrim itu untuk juz 28 halaman 10A sampai juz 28 halaman 10B
+Surat At-Mulk itu untuk juz 29 halaman 1A sampai juz 29 halaman 1B
+Surat Al-Qalam itu untuk juz 29 halaman 2A sampai juz 29 halaman 2B
+Surat Al-Haqqah itu untuk juz 29 halaman 3A sampai juz 29 halaman 3B
+Surat Al-Maarij itu untuk juz 29 halaman 4A sampai juz 29 halaman 4B
+Surat Nuh itu untuk juz 29 halaman 5A sampai juz 29 halaman 5B
+Surat Al-Jin itu untuk juz 29 halaman 6A sampai juz 29 halaman 6B
+Surat Al-Muzammil itu untuk juz 29 halaman 7A sampai juz 29 halaman 7A
+Surat Al-Mudatsir itu untuk juz 29 halaman 7B sampai juz 29 halaman 8A
+Surat Al-Qiyamah itu untuk juz 29 halaman 8B sampai juz 29 halaman 8B
+Surat Al-Insan itu untuk juz 29 halaman 9A sampai juz 29 halaman 9B
+Surat Al-Mursalat itu untuk juz 29 halaman 10A sampai juz 29 halaman 10B
+Surat An-Naba itu untuk juz 30 halaman 1A sampai juz 30 halaman 1A
+Surat An-Naziat itu untuk juz 30 halaman 1B sampai juz 30 halaman 2A
+Surat Abasa itu untuk juz 30 halaman 2B sampai juz 30 halaman 2B
+Surat At-Takwir itu untuk juz 30 halaman 3A sampai juz 30 halaman 3A
+Surat Al-Mutaffifin itu untuk juz 30 halaman 3B sampai juz 30 halaman 4A
+Surat Al-Insyiqaq itu untuk juz 30 halaman 4B sampai juz 30 halaman 4B
+Surat Al-Buruj itu untuk juz 30 halaman 5A sampai juz 30 halaman 5A
+Surat Al-A'la itu untuk juz 30 halaman 5B sampai juz 30 halaman 5B
+Surat Al-Gasyiyah itu untuk juz 30 halaman 6A sampai juz 30 halaman 6A
+Surat Al-Fajr itu untuk juz 30 halaman 6B sampai juz 30 halaman 6B
+Surat Al-Balad itu untuk juz 30 halaman 7A sampai juz 30 halaman 7A
+Surat Al-Lail itu untuk juz 30 halaman 7B sampai juz 30 halaman 7B
+Surat Al-Insyirah itu untuk juz 30 halaman 8A sampai juz 30 halaman 8A
+Surat Al-Alaq itu untuk juz 30 halaman 8B sampai juz 30 halaman 8B
+Surat Al-Bayyinah itu untuk juz 30 halaman 9A sampai juz 30 halaman 9A
+Surat Al-Adiyat itu untuk juz 30 halaman 9B sampai juz 30 halaman 9B
+Surat At-Takatsur itu untuk juz 30 halaman 10A sampai juz 30 halaman 10A
+Surat Al-Fil itu untuk juz 30 halaman 10b sampai juz 30 halaman 10B

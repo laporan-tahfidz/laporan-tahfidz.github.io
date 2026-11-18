@@ -1,0 +1,9 @@
+# CRON JOB SCHEDULE FOR MURAJAAH GENERATION
+# Timezone: Asia/Makassar (WITA, UTC+8)
+# Format: minute hour day-of-month month day-of-week command
+
+# Senin sampai Jumat, jam 6 sore (18:00)
+0 18 * * 1-5 curl -X POST "http://localhost:4848/generate-murajaah.php" -H "Content-Type: application/json" -d "{}"
+
+# Sabtu, jam 2 sore (14:00)
+0 14 * * 6 curl -X POST "http://localhost:4848/generate-murajaah.php" -H "Content-Type: application/json" -d "{}"

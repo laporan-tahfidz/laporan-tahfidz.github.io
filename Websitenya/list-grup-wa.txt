@@ -1,0 +1,226 @@
+[
+  {
+    "id": "120363405336220819@g.us",
+    "name": "Log MABAIZ",
+    "description": "",
+    "created_at": "2025-11-28T20:38:53+07:00",
+    "owner_phone": "6282258075858"
+  },
+  {
+    "id": "120363403978507739@g.us",
+    "name": "Reminder Zen",
+    "description": "",
+    "created_at": "2025-12-01T11:32:13+07:00",
+    "owner_phone": "6281545143654"
+  },
+  {
+    "id": "120363405726425317@g.us",
+    "name": "Testing 2",
+    "description": "",
+    "created_at": "2026-01-17T21:31:14+07:00",
+    "owner_phone": "6285111037215"
+  },
+  {
+    "id": "120363405078731414@g.us",
+    "name": "SIBAIZ (Sistem Informasi Baitul Izzah Terintegrasi)",
+    "description": "",
+    "created_at": "2025-10-16T11:30:22+07:00",
+    "owner_phone": "6281545143654"
+  },
+  {
+    "id": "120363421719373472@g.us",
+    "name": "🛍PENGURUS K OPTIN MABAIZ🛍",
+    "description": "",
+    "created_at": "2025-08-05T18:02:54+07:00",
+    "owner_phone": "6282123226368"
+  },
+  {
+    "id": "120363048059803932@g.us",
+    "name": "Tikus Kantor",
+    "description": "",
+    "created_at": "2023-02-14T09:01:32+07:00",
+    "owner_phone": "6281545143654"
+  },
+  {
+    "id": "120363133886920975@g.us",
+    "name": "Panitia ujian",
+    "description": "*DATA UJIAN TAHUN AJARAN 2023-2024*\nhttps://drive.google.com/drive/folders/17kfNPx9h8rcWegjwRwP0DbmP-SRZPD-_?usp=drive_link",
+    "created_at": "2023-05-09T08:06:22+07:00",
+    "owner_phone": "6281341459342"
+  },
+  {
+    "id": "120363215507122512@g.us",
+    "name": "Ustadz Kesantrian",
+    "description": "",
+    "created_at": "2024-02-06T20:44:27+07:00",
+    "owner_phone": "6285156952623"
+  },
+  {
+    "id": "120363328590107639@g.us",
+    "name": "🛍SUPPLIER KOPTIN MABAIZ🛍",
+    "description": "🛍️ *SUPPLIER KOPTIN MABAIZ* 🛍️\nKoperasi Kantin Madrasah Al-Qur'an Baitul Izzah menyediakan kebutuhan santri Mabaiz secara offline dan online.\n\n*TOKO 1 (HAZALA)* (Ready Setiap Hari)\n- Aneka Jajanan Makanan Ringan\n- Aneka Minuman\n- Alat Tulis\n- Aneka Parfum\n- Aneka Sabun\n- Alat Tidur\n\n*TOKO 2 (Ummu Rihal)*\n- Tahu Bakso 1K/pcs\n- Bala-Bala 1K/pcs\n- Busana Muslim/ah\n\n*TOKO 3 (Ustadz Yudha)*\n- ...\n\n*TOKO 4 (Ummu Aydan)*\n- All produk SR12\n\n*TOKO 5 (Ummu Alvin)*\n- Lumpia 1K/pcs\n\n*TOKO 6 (Ummu Maryam)*\n- Sempol 1K/pcs\n- kerupuk 2K/bungkus (balado,jagung bakar)\n\nSilakan diupdate jika ada perubahan dan wajib konfirmasi, Baarakallahufiikum..\n\nNote:\n1. Boleh Diantar pagi hari dan diambil malam hari/besok pagi\n2. Laba 10℅ untuk KOPTIN MABAIZ",
+    "created_at": "2024-10-09T19:29:39+07:00",
+    "owner_phone": "6282123226368"
+  },
+  {
+    "id": "6281545143654-1598842563@g.us",
+    "name": "Tim Tahfidz + bahasa",
+    "description": "Laporan Tahfidz\nhttps://tahfidz.mabaiz.com\n\nAnalisa Tahfidz Santri\nhttps://tahfidz.mabaiz.com/super\n\nDokumen Madrasah Baitul Izzah\nhttps://drive.google.com/drive/folders/1piywhYWJFD4vuN2QXZtxZyxkFxL2HoB3",
+    "created_at": "2020-08-31T09:56:03+07:00",
+    "owner_phone": "6281545143654"
+  },
+  {
+    "id": "120363404147860737@g.us",
+    "name": "Pilar Peradaban",
+    "description": "TAMPILAN:\ndaarutthoyyibah.com\n\nEDIT:\ndaarutthoyyibah.com/aplikasi",
+    "created_at": "2025-12-02T19:04:41+07:00",
+    "owner_phone": "6282153442363"
+  },
+  {
+    "id": "120363297655491193@g.us",
+    "name": "TIM MEDIA MABAIZ",
+    "description": "*TIM MEDIA MABAIZ*\n\nWhatsApp : Latip\nbit.ly/sahabatmabaiz\n\nTelegram : Zakki\nt.me/sahabatmabaiz\n\nYoutube : Latip\nhttps://www.youtube.com/@madrasahalquranbaitulizzah\n\nThreads : Zen\nhttps://www.threads.com/@madrasahalquranbaitulizzah\n\nX : Rania\nhttps://x.com/maabaiz\n\nInstagram : Marwa\nhttps://www.instagram.com/madrasahalquranbaitulizzah?igsh=MXY0ZzY3MjUyd3ltOQ==\n\nFacebook : Rahmah\nhttps://www.facebook.com/share/1KSupr3Dtc/\n\nTikTok : Hanip\nhttps://www.tiktok.com/@madrasahbaitulizzah?_t=ZS-8zzFxsAePNy\u0026_r=1\n\nLynk : Zen\nlynk.id/sahabatmabaiz\n\nWebsite : Zen\nmabaiz.com",
+    "created_at": "2024-05-13T21:13:32+07:00",
+    "owner_phone": "6281545143654"
+  },
+  {
+    "id": "120363419099619521@g.us",
+    "name": "Acara Wisuda Kamaiz",
+    "description": "",
+    "created_at": "2025-05-06T18:58:14+07:00",
+    "owner_phone": "6282252826688"
+  },
+  {
+    "id": "120363160518772529@g.us",
+    "name": "Badan Wakaf Daarut Thoyyibah",
+    "description": "*Filosofi Logo Badan Wakaf Daarut Thoyyibah*\n\nLogo Badan Wakaf Daarut Thoyyibah dirancang dengan pendekatan *islami modern* yang mencerminkan nilai *amanah, keberlanjutan, dan keberkahan wakaf*.\n\n*1. Bentuk Simbol Utama*\nBentuk logo menyerupai *ornamen geometris islami* yang simetris dan saling terhubung. Hal ini melambangkan:\n* *Kesatuan visi* antara wakif, pengelola, dan penerima manfaat wakaf\n* *Keteraturan dan profesionalisme* dalam pengelolaan wakaf\n* *Keberlanjutan pahala (ṣadaqah jāriyah)* yang terus mengalir\nStruktur yang saling mengikat juga mencerminkan *amanah yang terjaga* dan sistem wakaf yang kokoh.\n\n*2. Makna Simbol Tengah*\nBagian tengah logo membentuk kesan *titik inti / pusat* yang melambangkan:\n* *Niat ikhlas karena Allah*\n* Wakif sebagai *sumber kebaikan* yang menjadi pusat kebermanfaatan umat\n* Daarut Thoyyibah sebagai *pengelola yang menjaga nilai dan tujuan wakaf*\n\n*3. Makna Warna*\n* *Hijau tua*: melambangkan keberkahan, pertumbuhan, kesejahteraan, dan nilai Islam\n* *Hijau muda*: kesinambungan, harapan, dan manfaat yang terus berkembang\n* *Emas*: kemuliaan, amanah, nilai luhur, serta profesionalitas lembaga\nPerpaduan warna ini menunjukkan keseimbangan antara *spiritualitas dan tata kelola modern*.\n\n*4. Tipografi*\nPenggunaan huruf *tegas, sederhana, dan bersih* pada teks *BADAN WAKAF DAARUT THOYYIBAH* mencerminkan:\n* Lembaga yang *resmi dan terpercaya*\n* Keterbukaan dan akuntabilitas\n* Kesiapan untuk berkhidmat secara luas dan profesional\n\n*Kesimpulan Makna*\nLogo Badan Wakaf Daarut Thoyyibah merepresentasikan sebuah lembaga wakaf yang:\n\n> *Amanah dalam pengelolaan, berkelanjutan dalam manfaat, dan berorientasi pada keberkahan umat.*",
+    "created_at": "2023-07-26T11:48:15+07:00",
+    "owner_phone": "6285388898918"
+  },
+  {
+    "id": "120363207537771981@g.us",
+    "name": "Healing With Qur'an - Halaqah Ust. Latip",
+    "description": "Semangat mendampingi perjuangan Ananda di rumah untuk menjadi ahlul qur'an\n\nSemoga ananda para santri *MABAIZ* menjadi ahlul qur'an\n\nآمين اللهم آمين",
+    "created_at": "2023-12-17T21:15:12+07:00",
+    "owner_phone": "6282123226368"
+  },
+  {
+    "id": "120363402949384243@g.us",
+    "name": "IPAMABAIZ - AKHWAT🌺",
+    "description": "*STRUKTUR IPAMABAIZ*\nPeriode 2025-2029\n\nKetua   \t\t: Royyan A.A\nWakil 1           : A.A. Zuhdi\nWakil 2           : Rihal M.H.A\nBendahara 1  : M. Firmansyah\nBendahara 2  : A. Shinra A.\nHumas           : M. Fatih Y.Rdan Kholid G.M.\nMedia      \t: J. Habibullah F. dan Hazwan H.\n\nAgenda :\n1. Informasi, Silaturahmi, dan Donasi\n2. Reuni Akbar Tahun 2029\n3. Pelantikan Pengurus IPAMABAIZ Periode 2030-2034",
+    "created_at": "2025-04-07T14:01:55+07:00",
+    "owner_phone": "6282123226368"
+  },
+  {
+    "id": "120363401573191557@g.us",
+    "name": "🏕TAFAKKUR ALAM MABAIZ🏕",
+    "description": "",
+    "created_at": "2025-04-28T04:47:53+07:00",
+    "owner_phone": "6281545143654"
+  },
+  {
+    "id": "6282357501158-1591749196@g.us",
+    "name": "MABAIZ",
+    "description": "",
+    "created_at": "2020-06-10T07:33:16+07:00",
+    "owner_phone": ""
+  },
+  {
+    "id": "120363402058366473@g.us",
+    "name": "PSB MABAIZ 2026-2027",
+    "description": "*🌿 PSB MABAIZ 2026/2027 🌿*\n*Madrasah Al-Qur'an Baitul Izzah Samarinda*\n\nGrup ini diperuntukkan bagi orang tua/wali santri baru Tahun Pelajaran *2026/2027*.\nSeluruh informasi resmi terkait *Penerimaan Santri Baru (PSB)* akan disampaikan melalui grup ini.\n\n📌 Mohon menjaga adab komunikasi:\n\n1. Gunakan bahasa yang santun dan ringkas.\n2. Pertanyaan disampaikan seperlunya, sesuai dengan topik PSB.\n3. Informasi resmi hanya berasal dari *admin*.\n\n🕌 Semoga Allah mudahkan langkah kita dalam mendidik generasi penghafal Al-Qur'an yang beradab dan berilmu.\n\n*Baarakallahu fiikum.*",
+    "created_at": "2025-10-16T09:59:08+07:00",
+    "owner_phone": "6282258075858"
+  },
+  {
+    "id": "120363041754975103@g.us",
+    "name": "WALSAN MARHALAH TSALITSAH 2024/2025",
+    "description": "",
+    "created_at": "2022-02-28T10:54:24+07:00",
+    "owner_phone": "6282251303132"
+  },
+  {
+    "id": "120363046130499739@g.us",
+    "name": "INTERNAL MABAIZ",
+    "description": "Jumlah Seluruh Santri *52 orang*\nJumlah Asatidz/ah *20 orang*\nTotal Keseluruhan *72 orang*\n\n*Dokumentasi Kegiatan Madrasah dan Santri* \nhttps://drive.google.com/drive/folders/1LE_A4fcDXStHT06B19XovVijwaJevi_P\n\n_#bersifatinternal #tidakuntukumum_",
+    "created_at": "2023-01-04T20:12:48+07:00",
+    "owner_phone": "6281545143654"
+  },
+  {
+    "id": "120363386822714137@g.us",
+    "name": "WALSAN MARHALAH ULA 2025/2026",
+    "description": "بسم الله الرحمن الرحيم\nألسلام عليكم ورحمة الله وبركاته\n\nAlhamdulillah, setelah kita melewati masa PSB (Penerimaan Siswa baru) MABAIZ tahun ajaran 2025-2026, maka grup ini akan beralih fungsi menjadi grup wali santri kelas ula / 1 MABAIZ .\tGrup ini adalah wadah untuk komunikasi dan konsultasi bagi calon wali santri kepada pihak madrasah mengenai PSB (Penerimaan Siswa baru) MABAIZ tahun 2025/2026 secara khusus dan juga mengenai MABAIZ secara umum.\n\n3.\tSegala hal mengenai informasi PSB (Penerimaan Siswa baru) MABAIZ tahun 2025/2026 akan kami share kepada bapak/ibu sekalian melalui grup ini\n\n4.\tDan segala hal yang hendak ditanyakan atau dikonsultasikan mengenai PSB (Penerimaan Siswa baru) MABAIZ tahun 2025/2026 ataupun hal lainnya tentang Madrasah dapat juga disampaikan melalu grup ini.\n\n5.\tKedepannya setelah proses PSB (Penerimaan Siswa baru) MABAIZ tahun 2025/2026 telah berakhir dan masa pembelajaran akan berjalan, maka grup ini akan diubah menjadi grup kelas 1 (Ula) bagi wali santri baru MABAIZ tahun 2025/2026\n\nSemoga keberadaan grup ini akan membantu dan semakin mempermudah bapak/ibu calon wali santri sekalian dalam mengikuti proses PSB (Penerimaan Siswa baru) MABAIZ tahun 2025/2026.\n\nوالسلام عليكم ورحمة الله وبركاته\n\nTtd\nPanitia PSB MABAIZ 2025/2026\nMiftahul Hadi, S.Pd",
+    "created_at": "2024-12-30T12:11:51+07:00",
+    "owner_phone": "6282251303132"
+  },
+  {
+    "id": "120363161418378509@g.us",
+    "name": "IPAMABAIZ - IKHWAN🎓",
+    "description": "*STRUKTUR IPAMABAIZ*\nPeriode 2025-2029\n\nKetua             : Royyan A.A\nWakil 1           : A.A. Zuhdi\nWakil 2           : Rihal M.H.A\nBendahara 1  : A. Shinra A\nBendahara 2  : Waldan Faiq H\nHumas        \t: Hazwan H. dan Kholid G.M.\nMedia Foto    : J. Habibullah F.\nMedia Video  : M. Firmansyah\n\nAgenda :\n1. Informasi, Silaturahmi, dan Donasi\n2. Reuni Akbar Tahun 2029\n3. Pelantikan Pengurus IPAMABAIZ Periode 2030-2034",
+    "created_at": "2023-07-11T19:17:46+07:00",
+    "owner_phone": "6282123226368"
+  },
+  {
+    "id": "120363297742839922@g.us",
+    "name": "KAMAIZ (Panitia Wisuda Akbar Baitul Izzah 2025-2026)",
+    "description": "",
+    "created_at": "2024-05-21T13:22:56+07:00",
+    "owner_phone": "6281351655536"
+  },
+  {
+    "id": "120363285132515902@g.us",
+    "name": "WALSAN MARHALAH TSANIYAH 2025/2026",
+    "description": "",
+    "created_at": "2024-04-17T12:36:47+07:00",
+    "owner_phone": "6282251303132"
+  },
+  {
+    "id": "120363403200285874@g.us",
+    "name": "🛍KOPTIN ONLINE MABAIZ🛍",
+    "description": "*KOPTIN ONLINE MABAIZ*\nKoperasi Kantin Madrasah Al-Qur'an Baitul Izzah menyediakan kebutuhan santri Mabaiz secara online.\n\n*TOKO 1 (Ust. Hanip)*\n- Aneka Jajanan Makanan Ringan\n- Aneka Minuman\n- Aneka Sabun\n\n*TOKO 2 (Ummu Rihal)*\n- Tahu Bakso 1K/pcs\n- Bala-Bala 1K/pcs\n- Busana Muslim/ah\n\n*TOKO 3 (Ustadz Yudha)*\n- ...\n\n*TOKO 4 (Ummu Aydan)*\n- All produk SR12\n\n*TOKO 5 (Ummu Alvin)*\n- Lumpia 1K/pcs\n\n*TOKO 6 (Ummu Maryam)*\n- Sempol 1K/pcs\n- Es Lilin kacang ijo 1K/pcs\n- Es Mambo 1K/pcs\n\n*TOKO 7 (Ust. Zakki)*\n- Aneka Parfume\n\n*TOKO 8 (Ust. Latip)*\n- Alat makan & minum\n- Ganci\n- ATK\n\n*TOKO 9 (Mabaiz Store)*\n- Buku Modul Tahsin 50K\n- Buku Modul Komputer 10K\n- Buku Mutaba'ah Tahsin Tahfidz 10K\n- Buku Catatan Kecil 10K\n- Kartu Santri SIBAIZ 20K\n\nNote:\n- Masing-masing toko akan menginfokan produk yang ready *pada hari ini*\n- Silahkan japri toko untuk pembelian online\n- Pembayaran melalui (BSI) 743168297 AN. ABDUL LATIP\n- Setiap pembayaran *wajib menambahkan kode toko pada ujung nominal transfer.* Contoh pembelian ke *Toko 2* harga Rp.10.000, maka transfernya *Rp.10.002*\n\nBaarakallahufiikum..",
+    "created_at": "2025-07-29T18:21:15+07:00",
+    "owner_phone": "6282123226368"
+  },
+  {
+    "id": "6282251303132-1617936362@g.us",
+    "name": "🏷SAHABAT MABAIZ",
+    "description": "*Ahlan Wa Sahlan di Grup SAHABAT MABAIZ! 🎉*\n\nDi sini, kamu akan mendapatkan update terkini seputar kegiatan dan kehidupan santri di Madrasah Al-Qur'an Baitul Izzah Samarinda. Grup ini menjadi media resmi untuk menyebarkan informasi tentang berbagai aktivitas, prestasi, dan momen berharga yang terjadi di pesantren kita tercinta kepada ikhwan akhwat fillah dan segenap wali santri alumni\n\nJangan lewatkan konten-konten inspiratif, video-video seru, dan cerita menarik dari para santri penghafal Qur'an yang penuh semangat dalam menuntut ilmu dan mengamalkan ajaran dienul Islam. Ayo bergabung dan tetap terhubung dengan dunia pesantren melalui SAHABAT MABAIZ! 📺🌟\n\nSelamat menikmati dan mari bersama kita mendukung perkembangan para santri penghafal Qur'an menuju masa depan yang gemilang! 🚀\n\n---\n\nOfficial Website : https://mabaiz.com",
+    "created_at": "2021-04-09T09:46:02+07:00",
+    "owner_phone": "6282251303132"
+  },
+  {
+    "id": "120363385521979288@g.us",
+    "name": "c-pro45d_83 - Januari 25",
+    "description": "untuk yang back free bisa join ke link dibawah \nC-Pro45d_83_Rep2\n\nhttps://www.canva.com/brand/join?token=yR7szKJV9z1oFTdZaPubvg\u0026referrer=team-invite",
+    "created_at": "2024-12-31T12:16:22+07:00",
+    "owner_phone": "6289624778333"
+  },
+  {
+    "id": "120363044095342602@g.us",
+    "name": "FORUM WALI SANTRI MABAIZ",
+    "description": "*Forum Silaturahmi Wali Santri dan Informasi Madrasah Al-Qur'an Baitul Izzah Samarinda.*\n\nBismillah..\nAl Hamdulillah was shalatu was salamu ala Rasulillah..\n\nBapak ibu wali santri Madrasah Al-Qur'an Baitul Izzah.\n\nGrup ini merupakan grup \"Besar\" wali santri Madrasah Al-Qur'an Baitul Izzah, harapannya semua wali santri berkumpul di sini, semoga bisa lebih mempererat ukhuwah Islamiyah kita..\n\nDan grup ini juga sebagai wadah penyampaian informasi terkait Madrasah Al-Qur'an Baitul Izzah.\n\nBaarakallahu fikum..",
+    "created_at": "2022-08-27T12:07:56+07:00",
+    "owner_phone": "6282123226368"
+  },
+  {
+    "id": "120363219208079411@g.us",
+    "name": "Kampung Thoyyibah Offical",
+    "description": ".",
+    "created_at": "2024-02-08T08:28:25+07:00",
+    "owner_phone": "6282153442363"
+  },
+  {
+    "id": "120363044844265145@g.us",
+    "name": "🌤️DAILY QUR'AN  (IKHWAN) ",
+    "description": "GROUP KHUSUS LAKI-LAKI👳🏻‍♂️",
+    "created_at": "2022-09-07T07:47:02+07:00",
+    "owner_phone": "6281215605391"
+  },
+  {
+    "id": "120363022326600496@g.us",
+    "name": "Hikmah Pagi-Sore[IKHWAN]👳🏻‍♂️",
+    "description": "```GRUP KHUSUS IKHWAN [Laki-laki]```👳🏻‍♂️",
+    "created_at": "2022-02-08T17:01:05+07:00",
+    "owner_phone": "6281215605391"
+  }
+]

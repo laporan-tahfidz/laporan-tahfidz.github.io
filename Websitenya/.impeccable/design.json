@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2025-01-01T00:00:00Z",
+  "title": "Design System: Sistem Tahfidz",
+  "extensions": {
+    "colorMeta": {
+      "primary": { "role": "primary", "displayName": "Active Blue", "canonical": "#2563eb", "tonalRamp": ["#1e3a8a", "#1e40af", "#1d4ed8", "#2563eb", "#3b82f6", "#60a5fa", "#93c5fd", "#dbeafe"] },
+      "secondary": { "role": "secondary", "displayName": "Focus Purple", "canonical": "#9333ea", "tonalRamp": ["#581c87", "#6b21a8", "#7e22ce", "#9333ea", "#a855f7", "#c084fc", "#d8b4fe", "#f3e8ff"] },
+      "neutral-bg": { "role": "neutral", "displayName": "Surface Slate", "canonical": "#f8fafc", "tonalRamp": ["#020617", "#0f172a", "#1e293b", "#334155", "#475569", "#94a3b8", "#cbd5e1", "#f8fafc"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Page titles and modals." },
+      "body": { "displayName": "Body", "purpose": "Main content and input text." }
+    },
+    "shadows": [
+      { "name": "card-shadow", "value": "0 10px 15px -3px rgb(0 0 0 / 0.1)", "purpose": "Standard elevation for main content cards." }
+    ],
+    "breakpoints": [
+      { "name": "md", "value": "768px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main action button used for submitting forms and starting scans.",
+      "html": "<button class=\"ds-btn-primary\">SIMPAN PENCAPAIAN</button>",
+      "css": ".ds-btn-primary { background-color: #2563eb; color: #ffffff; padding: 8px 16px; border-radius: 8px; border: none; font-weight: 500; font-family: Inter, sans-serif; cursor: pointer; transition: background-color 0.2s; } .ds-btn-primary:hover { background-color: #1d4ed8; } .ds-btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }"
+    },
+    {
+      "name": "Standard Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "The main container for forms and information blocks.",
+      "html": "<div class=\"ds-card\"><h3 class=\"ds-card-title\">Informasi Santri</h3><p class=\"ds-card-body\">Data santri akan muncul di sini setelah scan.</p></div>",
+      "css": ".ds-card { background-color: #ffffff; border-radius: 12px; padding: 24px; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1); border: 1px solid #e5e7eb; font-family: Inter, sans-serif; } .ds-card-title { margin-top: 0; margin-bottom: 8px; font-size: 1.125rem; font-weight: 600; color: #1f2937; } .ds-card-body { margin: 0; color: #4b5563; font-size: 1rem; }"
+    },
+    {
+      "name": "Form Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Standard text/number input field.",
+      "html": "<div class=\"ds-form-group\"><label class=\"ds-label\">Nomor Juz</label><input type=\"number\" class=\"ds-input\" placeholder=\"Masukkan Juz...\" /></div>",
+      "css": ".ds-form-group { display: flex; flex-direction: column; gap: 4px; font-family: Inter, sans-serif; } .ds-label { font-size: 0.875rem; font-weight: 500; color: #374151; } .ds-input { border: 1px solid #d1d5db; border-radius: 8px; padding: 8px 12px; font-size: 1rem; transition: border-color 0.2s, box-shadow 0.2s; } .ds-input:focus { outline: none; border-color: #2563eb; box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Disciplined Ledger",
+    "overview": "Sistem ini mengutamakan kejelasan, kecepatan input, dan keandalan fungsional untuk musyrif di lapangan. Tampilan bersih dengan latar belakang netral yang cerah, aksen biru yang tegas untuk aksi utama, dan kartu dengan sudut membulat lembut memberikan kesan modern, terorganisir, dan tenang.",
+    "keyCharacteristics": [
+      "Tipografi sans-serif yang tajam untuk keterbacaan tinggi.",
+      "Kontainer kartu dengan bayangan lembut untuk memisahkan konteks tugas.",
+      "Skema warna status yang intuitif.",
+      "Lebar konten terkendali (maks 500px) untuk fokus pengguna."
+    ],
+    "rules": [
+      { "name": "The Status Saturation Rule", "body": "Warna status hanya digunakan pada latar belakang dengan opasitas rendah (level 50) untuk area informasi.", "section": "colors" }
+    ],
+    "dos": [
+      "Do gunakan max-w-md untuk semua form input tunggal.",
+      "Do berikan bg-blue-50 dan border-blue-200 untuk blok informasi Pencapaian Terakhir."
+    ],
+    "donts": [
+      "Don't gunakan warna merah untuk elemen selain penghapusan atau error kritis.",
+      "Don't gunakan teks berwarna hitam murni; gunakan Gray-800."
+    ]
+  }
+}

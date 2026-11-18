@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl *)",
+      "Bash(php *)",
+      "Bash(python *)",
+      "Bash(del *)",
+      "Bash(powershell *)",
+      "Bash(node *)"
+    ]
+  },
+  "$version": 3
+}

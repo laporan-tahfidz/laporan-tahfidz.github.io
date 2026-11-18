@@ -1,0 +1,63 @@
+DATA MURAJAAH SANTRI
+
+USTADZ HANIP
+- Ahmad Abdullah Kholish (lancar 0 juz, sampai Juz 8)
+- Fatih Alfaizi Aufa Ramadhan (lancar 0 juz, sampai Juz 2)
+- Ibrahim Khalil Muttaqin (lancar 0 juz, sampai Juz 7)
+- Khalid Fayyadh Al Muzzammil (lancar 0 juz, sampai Juz 3)
+- Mirza Faeyza Raziq Ramadhan (lancar 0 juz, sampai Juz 3)
+- Muhammad Daffa Abdul Rafi (lancar 1 juz, sampai Juz 8)
+- Thoriq Mubarok Muttaqin (lancar 0 juz, sampai Juz 6)
+- Zufar Lahidh Royyan Ash Shiddiq (lancar 0 juz, sampai Juz 5)
+
+USTADZ LATIP
+- Abdullah Ammar Al Maududi (lancar 1 juz, sampai Juz 2)
+- Abdurrahman Aliefadhafi Zain (lancar 0 juz, sampai Juz 2)
+- Ammar Azzamul Haq (lancar 1 juz, sampai Juz 13)
+- Ammar Yafi' Alauddin Ash Shiddiq (lancar 0 juz, sampai Juz 30)
+- Ifroyim Habibullah Fatah (lancar 0 juz, sampai Juz 2)
+- Muhammad Risky Ramadhan (lancar 0 juz, sampai Juz 1)
+- Nadil Al Fayyadh (lancar 2 juz, sampai Juz 15)
+- Zidane Al Asytar Syakur (lancar 0 juz, sampai Juz 9)
+
+USTADZ ZAKI
+- Abdullah Umar Al-Hummam (lancar 0 juz, sampai Juz 3)
+- Kamil Khairul Azam (lancar 0 juz, sampai Juz 4)
+- Kemal Abudzar Al Ghifari (lancar 0 juz, sampai Juz 6)
+- Muhammad Nizam Ghifari (lancar 0 juz, sampai Juz 6)
+- Muhammad Rizky (lancar 0 juz, sampai Juz 4)
+- Muhammad Sano Darussalam Ro (lancar 0 juz, sampai Juz 7)
+- Muhammad Yusuf Kamil Fahlevi (lancar 0 juz, sampai Juz 4)
+- Umar Abdurrosyid Assariy (lancar 0 juz, sampai Juz 3)
+
+USTADZ ZEN & USTADZ YUDA
+- Afkar Mukayyis Al Wahidi (lancar 0 juz, sampai Juz 12)
+- Ghaisan Alfarezal Tsany (lancar 0 juz, sampai Juz 29)
+- Hanif Syaifullah (lancar 1 juz, sampai Juz 8)
+- Muhammad Alvin Abdurrahman (lancar 0 juz, sampai Juz 11)
+- Muhammad Karim Amrullah (lancar 2 juz, sampai Juz 3)
+- Muhammad Rizky Suhaili (lancar 3 juz, sampai Juz 13)
+- Wildan Akhram Pratama (lancar 1 juz, sampai Juz 9)
+- Wildan Habibi Ariyadi (lancar 0 juz, sampai Juz 3)
+
+USTADZAH MARWA
+- Aiko Zahwa syarofana (lancar 3 juz, sampai Juz 8)
+- Aisyah Muwahhidah (lancar 4 juz, sampai Juz 17)
+- Amila Nahwal Haq (lancar 1 juz, sampai Juz 7)
+- Erina Liyana Zahra (lancar 1 juz, sampai Juz 29)
+- Sabila Farrah (lancar 1 juz, sampai Juz 5)
+
+USTADZAH RAHMAH
+- Audrey Callysta Fatih (lancar 2 juz, sampai Juz 8)
+- Bilqis (lancar 1 juz, sampai Juz 4)
+- Dhafia Ramadhiani Azzahra (lancar 0 juz, sampai Juz 6)
+- Niswah Adzkiyah (lancar 2 juz, sampai Juz 3)
+- Siti Sofia Azzalea (lancar 1 juz, sampai Juz 3)
+- Syifa Salsabila (lancar 4 juz, sampai Juz 8)
+
+USTADZAH RANIA
+- Aina Talita Zahron (lancar 0 juz, sampai Juz 2)
+- Halwa Haura Jannaty (lancar 2 juz, sampai Juz 8)
+- Khanza Nur Assyifa (lancar 0 juz, sampai Juz 10)
+- Khoirunnisa Ahlam (lancar 0 juz, sampai Juz 3)
+- Zhafira Aqeela Zahra (lancar 2 juz, sampai Juz 3)

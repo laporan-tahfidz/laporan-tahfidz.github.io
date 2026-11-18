@@ -1,0 +1,10 @@
+# OS & Temporary
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
+
+# Dependencies & Build in subdirectories
+**/node_modules/
+**/.svelte-kit/
+**/build/

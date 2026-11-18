@@ -1,0 +1,33 @@
+Ini saya dapatkan dari /rapot :
+
+LAPORAN TAHFIDZ SEMESTER GENAP
+TAHUN AJARAN 2025/2026
+Nama Santri	:	Abdurrahman Aliefadhafi Zain
+NIS	:	25.02.092
+Marhalah	:	Ula
+Pencapaian Terakhir	:	Juz 4, QS. Ali Imran, Ayat 140
+Syahadah
+Juz	Nilai	Catatan
+Kuantitatif	Kualitatif
+30, 29, 1, 2, 3	33	Maqbul	Perbaiki huruf Dhod dan Ain, perhatikan hukum tafkhim lafadz Allah dan Qolqolah
+Juziyah
+
+Kalau di /super kan, dia itu Syahadah salah 27. Maka, 100 - 27 harusnya 73, bukan 33. Terus, kalau kesalahan 27 ini berarti kan Jayyid, berdasarkan table berikut:
+
+Juziyah:
+Salah 0-5 : Mumtaz
+Salah 6-10 : Jayyid Jiddan
+Salah 11-15 : Jayyid 
+Salah 16-20 : Maqbul 
+Salah 21 : Mardud
+
+Syahadah:
+Salah 0-10 : Mumtaz
+Salah 11-20 : Jayyid Jiddan
+Salah 21-30 : Jayyid 
+Salah 31-40 : Maqbul 
+Salah 41 : Mardud
+
+Pada /rapot, kan di bagian catatan di masing-masing table itu kan bisa diedit ya. Nah, kasih tombol simpan itu, supaya terubah juga yang di database untuk di masing-masing catatan itu 
+
+pas coba saya update catatan, error : Gagal memperbarui catatan : unauthorized. Masih error yang sama. Buat supaya nggak perlu otorisasi

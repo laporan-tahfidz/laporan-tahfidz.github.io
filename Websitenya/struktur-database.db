@@ -1,0 +1,27 @@
+# Struktur Database
+
+### webhooksyahadah
+- id: integer (primary key, auto increment)
+- id_guru: integer - ID guru penguji dari API external
+- nik_santri: string - NIK santri
+- tanggal: datetime - tanggal & waktu penyimpanan (Asia/Makassar)
+- id_tahfidz: integer - ID pencapaian syahadah di tabel pencapaian
+- nama_santri: string - nama lengkap santri
+- syahadah_ke: integer - syahadah ke (1, 2, 3, 4, 5, atau 6)
+- nilai: string - Mumtaz (0-10), Jayyid Jiddan (11-20), Jayyid (21-30), Maqbul (31-40), Mardud (41+)
+- tahun_masuk: string - tahun masuk santri
+- kirim_ke_web_utama: boolean - status pengiriman ke web utama
+- kirim_ke_web_surat: boolean - status pengiriman ke web surat
+
+### webhookjuziyah
+- id: integer (primary key, auto increment)
+- id_guru: integer - ID guru musyrif halaqah / penguji
+- nik_santri: string - NIK santri
+- tanggal: datetime - tanggal & waktu penyimpanan (Asia/Makassar)
+- id_tahfidz: integer - ID pencapaian juziyah di tabel pencapaian
+- nama_santri: string - nama lengkap santri
+- juz: integer / string - juz yang diujikan
+- nilai: string - Mumtaz (0-5), Jayyid Jiddan (6-10), Jayyid (11-15), Maqbul (16-20), Mardud (21+)
+- tahun_masuk: string - tahun masuk santri
+- kirim_ke_web_surat: boolean - status pengiriman ke web surat
+
